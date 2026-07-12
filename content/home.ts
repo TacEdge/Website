@@ -2,9 +2,10 @@
 // Edit only against an approved copy revision.
 
 export const hero = {
-  headline: "Reporting your engineer trusts on sight.",
+  headline: "Shared operational clarity for ground engineering.",
   subhead:
-    "TacEdge is the field platform for geotechnical construction. Set the project up once, capture the work where it happens, and release a confirmed record. No chasing, no re-keying, no reconstruction at closeout.",
+    "Set the project up once, capture the work where it happens, and release a confirmed record your engineer can trust.",
+  tagline: "No chasing. No re-keying. No closeout reconstruction.",
   cta: "Arrange a demonstration",
 };
 

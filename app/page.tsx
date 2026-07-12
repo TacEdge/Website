@@ -31,6 +31,12 @@ export default function Home() {
             {hero.headline}
           </h1>
           <p className="sub" style={{ maxWidth: "56ch" }}>{hero.subhead}</p>
+          <p
+            className="sub"
+            style={{ maxWidth: "56ch", marginTop: 14, fontWeight: 600, color: "var(--cream)" }}
+          >
+            {hero.tagline}
+          </p>
           <div style={{ marginTop: 40 }}>
             <Link href={cta.href} className="btn btn--primary-inverse">
               {hero.cta}
