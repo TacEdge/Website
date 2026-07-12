@@ -14,7 +14,7 @@ export const cta = {
 };
 
 export const footer = {
-  line: "The field platform for geotechnical construction.",
+  line: "The field platform for ground-engineering delivery.",
   email: "mike@tacedge.co.nz",
   company: "TacEdge",
   copyright: `© ${new Date().getFullYear()} TacEdge. All rights reserved.`,
