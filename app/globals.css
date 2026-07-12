@@ -1,0 +1,470 @@
+/* ============================================================
+   TacEdge design tokens — from the product design system.
+   Locked in the master brief (§8). Do not add colours.
+   ============================================================ */
+
+:root {
+  /* Brand — locked, from the product design system */
+  --forest: #2B4721;      /* primary. Headers, primary buttons, dark sections */
+  --forest-2: #36592A;    /* hover / secondary green */
+  --olive: #6E7D5C;       /* working mid-tone. Secondary marks, muted accents */
+  --olive-edge: #AEB89C;  /* green hairline / selected edge */
+  --sage: #B2B594;        /* quiet surface. Labels on dark, quiet accents */
+  --sage-tint: #E6EBD9;   /* soft green fill. Chips, tinted panels */
+
+  /* Neutrals */
+  --cream: #F7F5EC;       /* page background — the brand paper */
+  --card: #FFFFFF;        /* card / surface */
+  --tint: #EFF1E4;        /* faint green-grey fill, quiet panels, alternating rows */
+  --stage: #DDE3D2;       /* app-frame backdrop, behind device mocks */
+
+  /* Ink */
+  --ink: #242A1F;         /* primary text */
+  --ink-60: #5B6253;      /* secondary text */
+  --ink-40: #8A8F80;      /* tertiary / captions */
+
+  /* Hairlines */
+  --rule: #CBD2C9;
+  --line: #E7E2D6;
+  --line-2: #D9D3C4;
+
+  /* Semantic status — caution / alert. Product screenshots and UI mocks ONLY.
+     Never decorative. Never a marketing accent. */
+  --ochre: #B07D2B;
+  --ochre-tint: #F5EBD4;
+  --brick: #9E3B2E;
+  --brick-tint: #F3DDD6;
+
+  /* Type */
+  --display: 'Play', system-ui, sans-serif;
+  --ui: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Scale (px) */
+  --fs-2xs: 10px;
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-base: 14px;
+  --fs-md: 15px;
+  --fs-lg: 18px;
+  --fs-xl: 26px;
+  --fs-2xl: 30px;
+  --fs-3xl: 44px;
+  --fs-4xl: 48px;
+
+  /* Shape */
+  --r-sm: 10px; --r-md: 12px; --r-lg: 14px; --r-xl: 20px; --r-2xl: 24px; --r-pill: 999px;
+
+  /* Elevation — one soft shadow only */
+  --shadow-sm: 0 1px 2px rgba(27,33,23,.05);
+  --shadow-md: 0 2px 10px rgba(27,33,23,.06);
+  --shadow-lg: 0 8px 28px rgba(27,33,23,.10);
+}
+
+/* Only inside an operator-phone mock: the product's field voice */
+.field {
+  --ui: 'IBM Plex Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: .01em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a { color: inherit; }
+
+img, svg { max-width: 100%; height: auto; }
+
+button { font: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
+
+.on-dark :focus-visible, .on-dark:focus-visible {
+  outline-color: var(--cream);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section { padding-block: 96px; }
+.section--tight { padding-block: 72px; }
+
+@media (max-width: 720px) {
+  .section { padding-block: 72px; }
+  .section--tight { padding-block: 48px; }
+}
+
+.section--tint { background: var(--tint); }
+.section--dark {
+  background: var(--forest);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.section--dark > .container { position: relative; z-index: 1; }
+
+/* ============================================================
+   Eyebrow → heading → sub trio
+   ============================================================ */
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--ink-40);
+  display: block;
+  margin-bottom: 16px;
+}
+.eyebrow--forest { color: var(--forest); }
+.section--dark .eyebrow { color: var(--sage); }
+
+.heading-xl { font-size: clamp(34px, 4.5vw, var(--fs-4xl)); }
+.heading-lg { font-size: clamp(28px, 3.6vw, var(--fs-3xl)); }
+.heading-md { font-size: var(--fs-2xl); }
+.heading-sm { font-size: var(--fs-xl); }
+
+.sub {
+  color: var(--ink-60);
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  margin-top: 20px;
+  max-width: 62ch;
+}
+.section--dark .sub { color: var(--sage-tint); }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 26px;
+  border-radius: var(--r-md);
+  font-family: var(--ui);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease,
+    box-shadow 140ms ease, transform 140ms ease;
+}
+
+.btn--primary {
+  background: var(--forest);
+  color: var(--cream);
+}
+.btn--primary:hover { background: var(--forest-2); }
+
+/* Primary action placed on a forest surface (header bar, dark panels) */
+.btn--primary-inverse {
+  background: var(--cream);
+  color: var(--forest);
+}
+.btn--primary-inverse:hover { background: #FFFFFF; }
+
+.btn--secondary {
+  background: var(--card);
+  border-color: var(--line-2);
+  color: var(--ink);
+}
+.btn--secondary:hover { border-color: var(--olive); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--forest-2);
+  font-weight: 600;
+  padding-inline: 12px;
+}
+
+/* ============================================================
+   Cards, chips
+   ============================================================ */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 140ms ease, transform 140ms ease;
+}
+.card--hover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  background: var(--sage-tint);
+  color: var(--forest);
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+
+.site-header {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+.site-header__inner {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.site-header__logo { display: inline-flex; align-items: center; }
+.site-header__logo img { height: 30px; width: auto; display: block; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.site-nav a:not(.btn) {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: var(--fs-md);
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  opacity: .88;
+  transition: opacity 140ms ease, background-color 140ms ease;
+}
+.site-nav a:not(.btn):hover { opacity: 1; background: rgba(247,245,236,.08); }
+.site-nav a[aria-current="page"] { opacity: 1; }
+.site-nav .btn { min-height: 40px; padding: 8px 18px; margin-left: 8px; }
+
+@media (max-width: 880px) {
+  .site-header__inner { flex-wrap: wrap; padding-block: 10px; }
+  .site-nav { flex-wrap: wrap; row-gap: 4px; }
+  .site-nav a:not(.btn) { padding: 8px 10px; font-size: var(--fs-base); }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.site-footer {
+  background: var(--forest);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.site-footer > .container { position: relative; z-index: 1; }
+.site-footer__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: space-between;
+  padding-block: 64px 40px;
+}
+.site-footer__col h3 {
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+.site-footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.site-footer__col a {
+  color: var(--cream);
+  opacity: .85;
+  text-decoration: none;
+  font-size: var(--fs-md);
+}
+.site-footer__col a:hover { opacity: 1; }
+.site-footer__col p { font-size: var(--fs-md); opacity: .85; }
+.site-footer__logo img { height: 28px; width: auto; display: block; }
+.site-footer__base {
+  border-top: 1px solid rgba(247,245,236,.16);
+  padding-block: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: space-between;
+  font-size: var(--fs-base);
+  opacity: .7;
+}
+
+/* ============================================================
+   Contour motif — behind dark bars and hero panels only.
+   Never over body text.
+   ============================================================ */
+
+.contour {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.contour path {
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 1.1;
+  opacity: .09;
+}
+
+/* ============================================================
+   Step indicator — Configure / Capture / Confirm & Release.
+   The product's work-phase happy path: sage → olive → forest.
+   ============================================================ */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+}
+@media (max-width: 880px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+.step-marker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.step-marker__num {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.step-marker__line { flex: 1; height: 1px; background: var(--rule); }
+
+.step--configure .step-marker__num {
+  background: var(--sage-tint);
+  color: var(--forest);
+  border: 1px solid var(--sage);
+}
+.step--capture .step-marker__num {
+  background: var(--tint);
+  color: var(--forest);
+  border: 1px solid var(--olive);
+}
+.step--release .step-marker__num {
+  background: var(--forest);
+  color: var(--cream);
+  border: 1px solid var(--forest);
+}
+
+.step-card { padding: 28px; height: 100%; }
+.step-card h3 { font-size: var(--fs-xl); margin-bottom: 4px; }
+.step-card .step-card__tag {
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-40);
+  display: block;
+  margin-bottom: 14px;
+}
+.step-card p { color: var(--ink-60); font-size: var(--fs-md); line-height: 1.65; }
+.step-card p + p { margin-top: 12px; }
+
+/* ============================================================
+   Pull quote / standout line
+   ============================================================ */
+
+.pullquote {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.2;
+  letter-spacing: .01em;
+  color: var(--forest);
+  max-width: 24ch;
+}
+
+.standout {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.6vw, var(--fs-2xl));
+  line-height: 1.25;
+  letter-spacing: .01em;
+  color: var(--forest);
+  border-left: 3px solid var(--olive-edge);
+  padding-left: 24px;
+  max-width: 34ch;
+}
+
+/* ============================================================
+   Prose blocks
+   ============================================================ */
+
+.prose { max-width: 62ch; }
+.prose p { color: var(--ink-60); font-size: var(--fs-lg); line-height: 1.65; }
+.prose p + p { margin-top: 18px; }
+.prose strong { color: var(--ink); font-weight: 600; }
