@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContourMotif from "@/components/ContourMotif";
+import { basePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Style reference · TacEdge",
@@ -203,24 +204,24 @@ export default function Styleguide() {
         <div style={grid}>
           <div className="card" style={{ padding: 24, display: "grid", gap: 12 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/tacedge-lockup-forest.svg" alt="TACEDGE lockup, forest" width={280} height={55} />
+            <img src={`${basePath}/brand/tacedge-lockup-forest.svg`} alt="TACEDGE lockup, forest" width={280} height={55} />
             <span className="eyebrow" style={{ margin: 0 }}>Light sections · forest</span>
           </div>
           <div style={{ background: "var(--forest)", borderRadius: "var(--r-lg)", padding: 24, display: "grid", gap: 12 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/tacedge-lockup-cream.svg" alt="TACEDGE lockup, cream" width={280} height={55} />
+            <img src={`${basePath}/brand/tacedge-lockup-cream.svg`} alt="TACEDGE lockup, cream" width={280} height={55} />
             <span className="eyebrow" style={{ margin: 0, color: "var(--sage)" }}>Dark sections · cream</span>
           </div>
           <div className="card" style={{ padding: 24, display: "grid", gap: 12 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/tacedge-lockup-ink.svg" alt="TACEDGE lockup, ink" width={280} height={55} />
+            <img src={`${basePath}/brand/tacedge-lockup-ink.svg`} alt="TACEDGE lockup, ink" width={280} height={55} />
             <span className="eyebrow" style={{ margin: 0 }}>Monochrome · ink</span>
           </div>
           <div className="card" style={{ padding: 24, display: "flex", gap: 16, alignItems: "center" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/tacedge-brandmark-sage.svg" alt="TacEdge brandmark" width={64} height={59} />
+            <img src={`${basePath}/brand/tacedge-brandmark-sage.svg`} alt="TacEdge brandmark" width={64} height={59} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/favicon.svg" alt="TacEdge app icon" width={64} height={59} />
+            <img src={`${basePath}/brand/favicon.svg`} alt="TacEdge app icon" width={64} height={59} />
             <span className="eyebrow" style={{ margin: 0 }}>Brandmark · app icon</span>
           </div>
         </div>

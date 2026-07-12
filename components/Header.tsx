@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, cta } from "@/content/site";
+import { basePath } from "@/lib/base-path";
 
 /**
  * Forest top bar. Wordmark alone — no workspace descriptor lockup.
@@ -11,7 +12,7 @@ export default function Header() {
         <Link href="/" className="site-header__logo" aria-label="TacEdge home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/tacedge-lockup-cream.svg"
+            src={`${basePath}/brand/tacedge-lockup-cream.svg`}
             alt="TACEDGE"
             width={182}
             height={36}

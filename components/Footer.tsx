@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, footer } from "@/content/site";
+import { basePath } from "@/lib/base-path";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div className="site-footer__col site-footer__logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/brand/tacedge-lockup-cream.svg"
+              src={`${basePath}/brand/tacedge-lockup-cream.svg`}
               alt="TACEDGE"
               width={162}
               height={32}

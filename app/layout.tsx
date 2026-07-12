@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { basePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "TacEdge — Field platform for geotechnical construction",
   description:
     "Configure the project once, capture the work where it happens, and release a record your engineer trusts on sight. In production across New Zealand and Samoa.",
-  icons: { icon: "/brand/favicon.svg" },
+  icons: { icon: `${basePath}/brand/favicon.svg` },
 };
 
 export default function RootLayout({
