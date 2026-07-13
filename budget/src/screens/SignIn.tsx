@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { getSupabase } from '@/data/supabaseStore'
 import { Button, Field, TextInput } from '@/components/ui'
+import lockupCream from '@/assets/tacedge-lockup-cream.svg'
 
 type Phase =
   | { kind: 'form' }
@@ -51,7 +52,7 @@ export function SignIn() {
     <div className="flex min-h-dvh flex-col bg-cream">
       <header className="on-dark bg-blackwood pt-safe">
         <div className="mx-auto flex min-h-16 w-full max-w-md items-center gap-2.5 px-6">
-          <img src="/brand/tacedge-lockup-cream.svg" alt="TacEdge" className="h-[22px] w-auto" />
+          <img src={lockupCream} alt="TacEdge" className="h-[22px] w-auto" />
           <span aria-hidden className="h-4 w-px bg-sage/40" />
           <span className="text-[13px] font-light tracking-wide text-sage">Budget</span>
         </div>

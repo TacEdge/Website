@@ -7,6 +7,7 @@ import type {
   Transfer,
 } from '@/domain/types'
 import type { DataStore, ExportPayload, Snapshot } from './store'
+import { safeStorage } from './safeStorage'
 import { buildSeedData, DEFAULT_SETTINGS } from './seed'
 
 const STORAGE_KEY = 'tacedge-budget-demo-v1'
@@ -34,7 +35,7 @@ export class LocalStore implements DataStore {
 
   private load(): LocalState {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY)
+      const raw = safeStorage.getItem(STORAGE_KEY)
       if (raw) return JSON.parse(raw) as LocalState
     } catch {
       // fall through to empty state
@@ -50,7 +51,7 @@ export class LocalStore implements DataStore {
   }
 
   private persist(): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state))
+    safeStorage.setItem(STORAGE_KEY, JSON.stringify(this.state))
   }
 
   async seedIfNeeded(): Promise<boolean> {

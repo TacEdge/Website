@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { useSyncState, useOnline } from '@/data/syncState'
 import { useAppState } from '@/data/AppProviders'
+import lockupCream from '@/assets/tacedge-lockup-cream.svg'
 
 const NAV = [
   { to: '/', label: 'Overview', icon: LayoutGrid, end: true },
@@ -197,7 +198,7 @@ function BrandLockup({ failed, onError }: { failed: boolean; onError: () => void
         <span className="font-display text-[17px] text-cream">TacEdge</span>
       ) : (
         <img
-          src="/brand/tacedge-lockup-cream.svg"
+          src={lockupCream}
           alt="TacEdge"
           className="h-[22px] w-auto"
           onError={onError}

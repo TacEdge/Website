@@ -1,7 +1,12 @@
 import { useState } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { useRegisterSW } from 'virtual:pwa-register/react'
-import { AppQueryProvider, AppStateProvider, useAppState } from '@/data/AppProviders'
+import {
+  AppQueryProvider,
+  AppStateProvider,
+  FORCE_DEMO,
+  useAppState,
+} from '@/data/AppProviders'
 import { ViewStateProvider } from '@/data/viewState'
 import { useSeed } from '@/data/hooks'
 import { ToastProvider } from '@/components/Toast'
@@ -14,13 +19,16 @@ import { SignIn, SetupNeeded } from '@/screens/SignIn'
 import { Onboarding } from '@/screens/Onboarding'
 
 export default function App() {
+  // Standalone demo builds are served from a single static file, so client
+  // routing uses the hash instead of real paths.
+  const Router = FORCE_DEMO ? HashRouter : BrowserRouter
   return (
     <AppQueryProvider>
       <AppStateProvider>
         <ToastProvider>
-          <BrowserRouter>
+          <Router>
             <Gate />
-          </BrowserRouter>
+          </Router>
         </ToastProvider>
       </AppStateProvider>
     </AppQueryProvider>

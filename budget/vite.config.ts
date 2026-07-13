@@ -2,13 +2,21 @@ import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { viteSingleFile } from 'vite-plugin-singlefile'
 import { fileURLToPath } from 'node:url'
+
+// ARTIFACT_BUILD=true produces a fully self-contained single-file demo
+// build (all JS/CSS/fonts/images inlined, no service worker) for hosting
+// the app as one static HTML page.
+const artifactBuild = process.env.ARTIFACT_BUILD === 'true'
 
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    ...(artifactBuild ? [viteSingleFile()] : []),
     VitePWA({
+      disable: artifactBuild,
       registerType: 'prompt',
       includeAssets: ['brand/favicon.svg', 'icons/apple-touch-icon.png'],
       manifest: {
@@ -45,6 +53,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+  },
+  build: {
+    assetsInlineLimit: artifactBuild ? 100_000_000 : undefined,
   },
   test: {
     environment: 'jsdom',

@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import type { Session } from '@supabase/supabase-js'
 import type { DataStore } from './store'
 import { LocalStore } from './localStore'
+import { safeStorage } from './safeStorage'
 import { getSupabase, supabaseConfig, SupabaseStore } from './supabaseStore'
 
 export type AppMode =
@@ -31,12 +32,15 @@ const AppContext = createContext<AppState | null>(null)
 
 const DEMO_FLAG_KEY = 'tacedge-budget-demo-enabled'
 
+/** Build-time switch: standalone demo builds go straight to demo mode. */
+export const FORCE_DEMO = import.meta.env.VITE_FORCE_DEMO === 'true'
+
 export function AppStateProvider({ children }: { children: ReactNode }) {
   const configured = supabaseConfig() != null
   const [session, setSession] = useState<Session | null>(null)
   const [sessionLoaded, setSessionLoaded] = useState(false)
   const [demo, setDemo] = useState(
-    () => !configured && localStorage.getItem(DEMO_FLAG_KEY) === 'true',
+    () => FORCE_DEMO || (!configured && safeStorage.getItem(DEMO_FLAG_KEY) === 'true'),
   )
 
   useEffect(() => {
@@ -83,14 +87,14 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       mode,
       signOut: async () => {
         if (demo) {
-          localStorage.removeItem(DEMO_FLAG_KEY)
-          setDemo(false)
+          safeStorage.removeItem(DEMO_FLAG_KEY)
+          if (!FORCE_DEMO) setDemo(false)
           return
         }
         await getSupabase()?.auth.signOut()
       },
       enterDemo: () => {
-        localStorage.setItem(DEMO_FLAG_KEY, 'true')
+        safeStorage.setItem(DEMO_FLAG_KEY, 'true')
         setDemo(true)
       },
     }),

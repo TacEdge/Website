@@ -8,6 +8,7 @@ import {
 } from 'react'
 import type { Period, SortMode } from '@/domain/types'
 import { useSettings } from './hooks'
+import { safeStorage } from './safeStorage'
 
 /**
  * Session view preferences: the selected reporting period applies
@@ -31,14 +32,14 @@ const SORT_KEY = 'tacedge-budget-sort'
 export function ViewStateProvider({ children }: { children: ReactNode }) {
   const { data: settings } = useSettings()
   const [period, setPeriodState] = useState<Period | null>(() => {
-    const saved = localStorage.getItem(PERIOD_KEY)
+    const saved = safeStorage.getItem(PERIOD_KEY)
     return saved === 'weekly' || saved === 'fortnightly' || saved === 'monthly' || saved === 'annual'
       ? saved
       : null
   })
   const [includeOneOffs, setIncludeOneOffsState] = useState<boolean | null>(null)
   const [sortMode, setSortModeState] = useState<SortMode>(() => {
-    const saved = localStorage.getItem(SORT_KEY)
+    const saved = safeStorage.getItem(SORT_KEY)
     return (saved as SortMode) || 'custom'
   })
 
@@ -53,14 +54,14 @@ export function ViewStateProvider({ children }: { children: ReactNode }) {
     () => ({
       period: period ?? settings?.defaultPeriod ?? 'monthly',
       setPeriod: (next) => {
-        localStorage.setItem(PERIOD_KEY, next)
+        safeStorage.setItem(PERIOD_KEY, next)
         setPeriodState(next)
       },
       includeOneOffs: includeOneOffs ?? settings?.includeOneOffs ?? true,
       setIncludeOneOffs: setIncludeOneOffsState,
       sortMode,
       setSortMode: (mode) => {
-        localStorage.setItem(SORT_KEY, mode)
+        safeStorage.setItem(SORT_KEY, mode)
         setSortModeState(mode)
       },
     }),
