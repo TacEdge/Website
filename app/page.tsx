@@ -303,8 +303,8 @@ export default function Home() {
               src={product(origin.image.src)}
               alt={origin.image.alt}
               loading="lazy"
-              width={900}
-              height={1642}
+              width={960}
+              height={624}
             />
           </div>
         </div>

@@ -155,8 +155,8 @@ export const origin = {
   ],
   button: "Read our story",
   image: {
-    src: "photo-story-coast.webp",
-    alt: "Steep coastal rock face above the sea on a New Zealand worksite",
+    src: "photo-whakaari.webp",
+    alt: "Whakaari / White Island steaming across the water, with the TacEdge brandmark peaks in front",
   },
 };
 
