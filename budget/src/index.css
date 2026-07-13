@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   TacEdge Budget — design tokens (budget product palette)
+   ============================================================ */
+
+@theme {
+  --color-blackwood: #0e2114;
+  --color-forest: #2b4721;
+  --color-moss: #6e7d5c;
+  --color-sage: #b2b594;
+  --color-cream: #fcf2e8;
+  --color-ink: #1b2117;
+  --color-card: #ffffff;
+  --color-cream-deep: #f5e9d9;
+  --color-sagetint: #eef0e6;
+  --color-line: #d9d4c4;
+  --color-ochre: #b07d2b;
+  --color-ochretint: #f5ebd4;
+  --color-brick: #9e3b2e;
+  --color-bricktint: #f3ddd6;
+
+  --font-display: 'Play', system-ui, sans-serif;
+  --font-ui: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+
+  --shadow-card: 0 1px 2px rgba(27, 33, 23, 0.05);
+  --shadow-raised: 0 2px 10px rgba(27, 33, 23, 0.06);
+  --shadow-sheet: 0 -8px 28px rgba(27, 33, 23, 0.14);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.12;
+  margin: 0;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  font-weight: 400;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--color-cream);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Financial figures: tabular numerals, always. */
+.figure {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Safe-area helpers for the iPhone home indicator and notch. */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Bottom sheet slide-up. Respects reduced motion via the global rule. */
+@keyframes sheet-up {
+  from { transform: translateY(24px); opacity: 0.6; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.sheet-enter {
+  animation: sheet-up 200ms ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-enter {
+  animation: fade-in 160ms ease-out;
+}
+
+/* Quiet scrollbars inside scrollable sheets */
+.sheet-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+/* Remove number-input spinners; currency fields use inputmode instead. */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

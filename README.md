@@ -31,3 +31,8 @@ prototype (element screenshots at 2x, exported WebP). Third-party names in
 the prototype's worked example are replaced with generic role labels
 (Principal, Consulting engineer) before capture. Regenerate rather than
 hand-edit these images.
+
+## Budget app
+
+`budget/` contains **TacEdge | Budget**, the private budgeting PWA (React + Vite + Supabase).
+It is a separate workspace with its own dependencies and deployment — see `budget/README.md`.
