@@ -44,9 +44,6 @@ export default function Home() {
         <ContourMotif />
         <div className="container section hero">
           <div className="hero__copy">
-            <span className="eyebrow" style={{ color: "var(--sage)" }}>
-              {hero.label}
-            </span>
             <h1 className="heading-xl hero__headline">{hero.headline}</h1>
             <p className="sub">{hero.subhead}</p>
             <p className="hero__tagline">{hero.tagline}</p>
@@ -181,37 +178,17 @@ export default function Home() {
                     </div>
                   </div>
                   <span className="phase__role">Role: {phase.role}</span>
-                  <p className="phase__copy">{phase.copy}</p>
-
-                  <div className="phase__media">
-                    {phase.images.map((img) =>
-                      img.frame === "phone" ? (
-                        <div className="phone-frame phase__phone" key={img.src}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={product(img.src)}
-                            alt={img.alt}
-                            loading="lazy"
-                            width={640}
-                            height={1918}
-                          />
-                        </div>
-                      ) : (
-                        <div className="panel-frame" key={img.src}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={product(img.src)}
-                            alt={img.alt}
-                            loading="lazy"
-                          />
-                        </div>
-                      ),
-                    )}
+                  <div className="phase__photo">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={product(phase.image.src)}
+                      alt={phase.image.alt}
+                      loading="lazy"
+                      width={1100}
+                      height={825}
+                    />
                   </div>
-                  {"pmLine" in phase && phase.pmLine ? (
-                    <p className="phase__pm-line">{phase.pmLine}</p>
-                  ) : null}
-
+                  <p className="phase__copy">{phase.copy}</p>
                   <ul className="phase__items">
                     {phase.items.map((item) => (
                       <li key={item}>
@@ -247,20 +224,15 @@ export default function Home() {
           <aside className="record-strip card" aria-label="One connected record">
             <div className="record-strip__intro">
               <h3 className="heading-sm">{record.header}</h3>
-              {record.lines.map((line) => (
-                <p key={line.slice(0, 24)}>{line}</p>
-              ))}
+              <p>{record.body}</p>
             </div>
             <div className="record-strip__flow">
               <span className="record-strip__id">{record.itemId}</span>
               <ol className="record-strip__stages">
                 {record.stages.map((stage, i) => (
-                  <li key={stage.name}>
-                    <span
-                      className={`record-stage record-stage--${i}`}
-                    >
-                      <b>{stage.name}</b>
-                      <small>{stage.detail}</small>
+                  <li key={stage}>
+                    <span className={`record-stage record-stage--${i}`}>
+                      <b>{stage}</b>
                     </span>
                     {i < record.stages.length - 1 && (
                       <PhaseArrow className="record-strip__arrow" />
@@ -282,25 +254,6 @@ export default function Home() {
                 <span className="eyebrow eyebrow--forest">{card.title}</span>
                 <h3 className="heading-sm">{card.header}</h3>
                 <p className="principle__copy">{card.copy}</p>
-                {card.support && (
-                  <p className="principle__support">{card.support}</p>
-                )}
-                {card.image && (
-                  <div
-                    className={
-                      card.key === "field"
-                        ? "phone-frame principle__phone"
-                        : "panel-frame principle__panel"
-                    }
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={product(card.image.src)}
-                      alt={card.image.alt}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
               </article>
             ))}
           </div>
@@ -327,20 +280,32 @@ export default function Home() {
       {/* Origin */}
       <section className="section--dark">
         <ContourMotif />
-        <div className="container section">
-          <span className="eyebrow">{origin.eyebrow}</span>
-          <h2 className="heading-lg" style={{ color: "var(--cream)" }}>
-            {origin.header}
-          </h2>
-          <div className="prose prose--dark" style={{ marginTop: 24 }}>
-            {origin.body.map((p) => (
-              <p key={p.slice(0, 24)}>{p}</p>
-            ))}
+        <div className="container section--tight origin">
+          <div className="origin__copy">
+            <span className="eyebrow">{origin.eyebrow}</span>
+            <h2 className="heading-lg" style={{ color: "var(--cream)" }}>
+              {origin.header}
+            </h2>
+            <div className="prose prose--dark" style={{ marginTop: 24 }}>
+              {origin.body.map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </div>
+            <div style={{ marginTop: 32 }}>
+              <Link href="/about" className="btn btn--primary-inverse">
+                {origin.button}
+              </Link>
+            </div>
           </div>
-          <div style={{ marginTop: 36 }}>
-            <Link href="/about" className="btn btn--primary-inverse">
-              {origin.button}
-            </Link>
+          <div className="origin__media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={product(origin.image.src)}
+              alt={origin.image.alt}
+              loading="lazy"
+              width={900}
+              height={1642}
+            />
           </div>
         </div>
       </section>

@@ -44,7 +44,7 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="M23 20v1M23 25v1M19 22v1" />
     </>
   ),
-  "Piling and Retaining": (
+  "Piling & Retaining": (
     // Retained wall with piles
     <>
       <path d="M6 27V9M12 27V6M18 27V9" />

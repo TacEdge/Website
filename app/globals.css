@@ -377,7 +377,7 @@ button { font: inherit; }
   fill: none;
   stroke: var(--cream);
   stroke-width: 1.1;
-  opacity: .04;
+  opacity: .05;
 }
 
 /* ============================================================
@@ -755,21 +755,17 @@ button { font: inherit; }
 }
 .phase__copy { color: var(--ink-60); font-size: var(--fs-md); line-height: 1.6; }
 
-.phase__media { display: flex; flex-direction: column; gap: 12px; }
-.phase--capture .phase__media {
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: 12px;
-  align-items: start;
+.phase__photo {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
 }
-.phase__phone { aspect-ratio: 39 / 66; }
-
-.phase__pm-line {
-  font-family: var(--mono);
-  font-size: var(--fs-sm);
-  letter-spacing: 0.06em;
-  color: var(--forest);
-  text-align: center;
+.phase__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .phase__items {
@@ -803,10 +799,6 @@ button { font: inherit; }
   .phase-handoff { justify-content: center; padding-block: 8px; }
   .phase-handoff svg { transform: rotate(90deg); }
 }
-@media (max-width: 560px) {
-  .phase--capture .phase__media { grid-template-columns: 1fr; }
-  .phase--capture .phase__phone { max-width: 240px; margin-inline: auto; }
-}
 
 /* ============================================================
    One connected record
@@ -823,9 +815,9 @@ button { font: inherit; }
 .record-strip__intro p {
   color: var(--ink-60);
   font-size: var(--fs-md);
-  margin-top: 8px;
+  line-height: 1.6;
+  margin-top: 10px;
 }
-.record-strip__intro h3 { margin-bottom: 8px; }
 .record-strip__id {
   display: inline-block;
   font-family: var(--mono);
@@ -859,25 +851,15 @@ button { font: inherit; }
 .record-strip__arrow { color: var(--olive); width: 20px; height: 20px; flex-shrink: 0; }
 .record-stage {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  justify-content: center;
   border-radius: var(--r-md);
-  padding: 9px 13px;
+  padding: 12px 16px;
   border: 1px solid var(--line-2);
   background: var(--cream);
   flex: 1;
   min-width: 0;
 }
-.record-stage b { font-size: var(--fs-base); color: var(--ink); }
-.record-stage small {
-  font-family: var(--mono);
-  font-size: var(--fs-2xs);
-  letter-spacing: 0.04em;
-  color: var(--ink-60);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+.record-stage b { font-size: var(--fs-md); color: var(--ink); white-space: nowrap; }
 .record-stage--1 { background: var(--tint); }
 .record-stage--2 {
   background: var(--sage-tint);
@@ -888,7 +870,6 @@ button { font: inherit; }
   border-color: var(--forest);
 }
 .record-stage--3 b { color: var(--cream); }
-.record-stage--3 small { color: var(--sage); }
 
 @media (max-width: 980px) {
   .record-strip { grid-template-columns: 1fr; }
@@ -914,20 +895,6 @@ button { font: inherit; }
 }
 .principle .eyebrow { margin-bottom: 0; }
 .principle__copy { color: var(--ink-60); font-size: var(--fs-md); line-height: 1.65; }
-.principle__support {
-  font-weight: 600;
-  color: var(--forest);
-  font-size: var(--fs-base);
-  border-left: 3px solid var(--olive-edge);
-  padding-left: 14px;
-  line-height: 1.55;
-}
-.principle__phone {
-  margin-top: 10px;
-  width: min(220px, 60%);
-  aspect-ratio: 39 / 46;
-}
-.principle__panel { margin-top: 10px; }
 
 @media (max-width: 880px) {
   .principles { grid-template-columns: 1fr; }
@@ -984,12 +951,39 @@ button { font: inherit; }
   padding: clamp(48px, 7vw, 88px) 24px;
   text-align: center;
 }
-.cta-panel > * { position: relative; z-index: 1; }
-.cta-panel .contour { z-index: 0; }
+.cta-panel > *:not(.contour) { position: relative; z-index: 1; }
+.cta-panel .contour { position: absolute; z-index: 0; }
 .cta-panel .contour path { stroke: var(--forest); opacity: 0.05; }
 .cta-panel__support {
   margin-top: 14px;
   font-weight: 600;
   color: var(--forest);
   font-size: var(--fs-md);
+}
+
+/* ============================================================
+   Origin section — compact split with coastal image
+   ============================================================ */
+
+.origin {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 56px;
+  align-items: center;
+}
+.origin__media {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid rgba(247, 245, 236, 0.18);
+}
+.origin__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+@media (max-width: 880px) {
+  .origin { grid-template-columns: 1fr; gap: 40px; }
+  .origin__media img { max-height: 260px; }
 }
