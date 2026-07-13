@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { useSyncState, useOnline } from '@/data/syncState'
 import { useAppState } from '@/data/AppProviders'
+import { safeStorage } from '@/data/safeStorage'
 import lockupCream from '@/assets/tacedge-lockup-cream.svg'
 
 const NAV = [
@@ -58,6 +59,19 @@ export function SyncStatus() {
 export function DemoBanner() {
   const { mode } = useAppState()
   if (mode.kind !== 'ready' || mode.store.mode !== 'local') return null
+  if (!safeStorage.persistent) {
+    // Sandboxed hosting (e.g. an embedded preview) blocks browser storage:
+    // nothing survives closing the page. Say so plainly.
+    return (
+      <div
+        role="alert"
+        className="bg-bricktint px-4 py-2 text-center text-[12px] font-normal text-brick"
+      >
+        Preview only — this page cannot keep your data after you close it.
+        Export a backup from Settings before leaving.
+      </div>
+    )
+  }
   return (
     <div className="bg-ochretint px-4 py-2 text-center text-[12px] font-normal text-ochre">
       Demo mode — data is stored on this device only and is not synced.

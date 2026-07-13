@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [claude/new-session-d7yqqw, main]
+    branches: [claude/new-session-d7yqqw, main, claude/tacedge-budget-pwa-nqsmb8]
   workflow_dispatch:
 
 permissions:
@@ -27,6 +27,14 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /Website
+      # Budget demo PWA (on-device data, no Supabase) served at /Website/budget/
+      - run: npm ci
+        working-directory: budget
+      - run: npm run build
+        working-directory: budget
+        env:
+          VITE_FORCE_DEMO: "true"
+      - run: mv budget/dist out/budget
       - uses: actions/configure-pages@v5
         with:
           enablement: true
