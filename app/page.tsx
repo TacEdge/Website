@@ -177,21 +177,22 @@ export default function Home() {
             className="hero__visual"
             aria-label="TACEDGE field capture feeding a desktop QA workflow where project records, evidence and test results can be reviewed and approved"
           >
-            <div className="browser-frame hero__qa">
-              <div className="browser-frame__bar" aria-hidden="true">
-                <span />
-                <span />
-                <span />
+            <div className="device-monitor hero__qa">
+              <div className="device-monitor__screen">
+                <span className="device-monitor__camera" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={product("tacedge-qa-queue-desktop.webp")}
+                  alt=""
+                  width={1200}
+                  height={871}
+                />
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={product("tacedge-qa-queue-desktop.webp")}
-                alt=""
-                width={1200}
-                height={871}
-              />
+              <span className="device-monitor__neck" aria-hidden="true" />
+              <span className="device-monitor__base" aria-hidden="true" />
             </div>
-            <div className="phone-frame hero__phone">
+            <div className="device-phone hero__phone">
+              <span className="device-phone__speaker" aria-hidden="true" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("tacedge-field-capture-mobile.webp")}

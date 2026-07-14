@@ -465,65 +465,89 @@ button { font: inherit; }
 .prose strong { color: var(--ink); font-weight: 600; }
 
 /* ============================================================
-   Device / product frames — real prototype screens only
+   Device frames — real product screens in minimal hardware.
+   Graphite bezels so desktop reads as a monitor and mobile as a
+   phone; the screenshots themselves stay untouched.
    ============================================================ */
 
-.browser-frame {
-  background: var(--card);
-  border: 1px solid var(--line-2);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
+.device-monitor { min-width: 0; }
+.device-monitor__screen {
+  position: relative;
+  background: #262b25;
+  border: 1px solid rgba(247, 245, 236, 0.16);
+  border-radius: 16px;
+  padding: 18px 12px 12px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
 }
-.browser-frame__bar {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  padding: 10px 14px;
-  background: var(--tint);
-  border-bottom: 1px solid var(--line);
-}
-.browser-frame__bar span {
-  width: 9px;
-  height: 9px;
+.device-monitor__camera {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
   border-radius: var(--r-pill);
-  background: var(--olive-edge);
+  background: rgba(247, 245, 236, 0.28);
 }
-.browser-frame img { display: block; width: 100%; height: auto; }
-
-.phone-frame {
-  border: 7px solid #1c2517;
-  border-radius: 30px;
-  background: #1c2517;
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-.phone-frame img {
+.device-monitor__screen img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
+  border-radius: 7px;
+}
+.device-monitor__neck {
+  display: block;
+  width: 9%;
+  height: 24px;
+  margin-inline: auto;
+  background: #20251f;
+}
+.device-monitor__base {
+  display: block;
+  width: 26%;
+  height: 9px;
+  margin-inline: auto;
+  border-radius: var(--r-pill);
+  background: #262b25;
+  border: 1px solid rgba(247, 245, 236, 0.12);
+  border-top: 0;
+}
+
+.device-phone {
+  position: relative;
+  background: #262b25;
+  border: 1px solid rgba(247, 245, 236, 0.18);
+  border-radius: 34px;
+  padding: 16px 9px 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+}
+.device-phone__speaker {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: rgba(247, 245, 236, 0.22);
+}
+/* Side power button */
+.device-phone::after {
+  content: "";
+  position: absolute;
+  top: 21%;
+  right: -3px;
+  width: 3px;
+  height: 46px;
+  border-radius: 2px;
+  background: #333831;
+}
+.device-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 22px;
 }
-
-.panel-frame {
-  border: 1px solid var(--line-2);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  background: var(--card);
-}
-.panel-frame img { display: block; width: 100%; height: auto; }
-
-.float-card {
-  border: 1px solid var(--line-2);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  background: var(--card);
-}
-.float-card img { display: block; width: 100%; height: auto; }
 
 /* ============================================================
    Hero
@@ -578,7 +602,6 @@ button { font: inherit; }
   bottom: 0;
   left: 6%;
   width: 33%;
-  aspect-ratio: 1160 / 1915;
   z-index: 2;
 }
 
