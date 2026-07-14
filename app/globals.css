@@ -1142,7 +1142,7 @@ button { font: inherit; }
   background: var(--sage-tint);
   border: 1px solid var(--rule);
   border-radius: var(--r-2xl);
-  padding: clamp(48px, 7vw, 88px) 24px;
+  padding: clamp(44px, 5.5vw, 68px) 24px;
   text-align: center;
 }
 .cta-panel > *:not(.contour) { position: relative; z-index: 1; }

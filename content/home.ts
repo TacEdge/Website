@@ -171,7 +171,7 @@ export const origin = {
 
 export const closing = {
   header: "See TACEDGE on your project.",
-  body: "Bring a current project, work type or reporting problem. In fifteen minutes, we'll show how TACEDGE would structure it.",
+  body: "Bring a current project or reporting problem. In 15 minutes, we’ll show how TACEDGE would structure the workflow.",
   support: "Bring your engineer if useful.",
   button: "Arrange a demonstration",
 };

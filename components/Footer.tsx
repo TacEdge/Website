@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, cta, footer } from "@/content/site";
+import { nav, footer } from "@/content/site";
 import { basePath } from "@/lib/base-path";
 
 /**
@@ -39,9 +39,6 @@ export default function Footer() {
             <ul>
               <li>
                 <a href={`mailto:${footer.email}`}>{footer.email}</a>
-              </li>
-              <li>
-                <Link href={cta.href}>{cta.label}</Link>
               </li>
             </ul>
           </div>

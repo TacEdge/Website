@@ -12,8 +12,8 @@ export const cta = {
 };
 
 export const footer = {
-  line: "The field platform for ground-engineering delivery.",
-  email: "mike@tacedge.co.nz",
+  line: "Shared clarity for ground-engineering delivery.",
+  email: "info@tacedge.co.nz",
   copyright: `© ${new Date().getFullYear()} TACEDGE. All rights reserved.`,
   location: "New Zealand",
 };
