@@ -145,12 +145,23 @@ export const workTypes = {
 export const origin = {
   eyebrow: "Our story",
   // Two intentional lines on wide desktop; wraps naturally below.
-  headerLines: ["Born from a real", "coordination gap."],
+  headerLines: ["The plan existed.", "Shared clarity did not."],
   body: [
-    "The idea for TACEDGE emerged during the 2019 Whakaari / White Island recovery operation, when a complex multi-agency plan had to be drawn on a whiteboard and condensed into a single PowerPoint slide.",
-    "The people involved were experienced. What was missing was a shared digital workspace where everyone could work from the same current picture—a coordination problem that also exists across complex field operations and ground-engineering delivery.",
+    "The idea for TACEDGE emerged during the 2019 Whakaari / White Island recovery operation.",
+    "A complex multi-agency plan was drawn on a whiteboard and condensed into a single PowerPoint slide.",
   ],
-  conclusion: "TACEDGE exists to make shared clarity the normal way of working.",
+  missing:
+    "What was missing was one shared system to configure the plan, capture field activity as it happened, and confirm a trusted record.",
+  missionLabel: "Mission",
+  mission: "To bring shared clarity to the tactical edge.",
+  builtLabel: "That’s why we built TACEDGE",
+  built: [
+    { key: "plan", label: "Configure the plan." },
+    { key: "activity", label: "Capture the activity." },
+    { key: "record", label: "Confirm the record." },
+  ],
+  foundation:
+    "Shared clarity isn’t a feature. It’s the foundation of how we work in the field.",
   image: {
     src: "photo-whakaari-peaks.webp",
     alt: "Whakaari / White Island viewed from the water in 2019, with the TACEDGE brandmark peaks in front",

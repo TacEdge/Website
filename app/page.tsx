@@ -69,6 +69,32 @@ const PROCESS_ICONS: Record<string, React.ReactNode> = {
       <path d="M12 7.2v9.6M14.6 9.4c-.6-.9-1.6-1.4-2.6-1.4-1.4 0-2.4.8-2.4 1.9s.9 1.6 2.4 1.9 2.6.8 2.6 2-1.1 2-2.6 2c-1 0-2-.5-2.6-1.4" />
     </>
   ),
+  // Mountain (mission mark)
+  mountain: (
+    <path d="m4.5 17 5-7.6 3.1 4.6 2.1-3.1 4.8 6.1z" />
+  ),
+  // Plan grid
+  plan: (
+    <>
+      <rect x="5" y="5" width="14" height="14" rx="2" />
+      <path d="M12 5v14M5 12h14" />
+    </>
+  ),
+  // Crosshair / capture target
+  activity: (
+    <>
+      <circle cx="12" cy="12" r="5.6" />
+      <circle cx="12" cy="12" r="1.4" />
+      <path d="M12 3.8V6.4M12 17.6v2.6M3.8 12H6.4M17.6 12h2.6" />
+    </>
+  ),
+  // Shield with check
+  record: (
+    <>
+      <path d="M12 3.2 19 5.8v5.3c0 4.3-2.9 7.7-7 9.6-4.1-1.9-7-5.3-7-9.6V5.8z" />
+      <path d="m8.8 11.8 2.1 2.1 4.3-4.6" />
+    </>
+  ),
 };
 
 function ProcessIcon({ type }: { type: string }) {
@@ -475,8 +501,17 @@ export default function Home() {
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
+            <p className="origin__missing">{origin.missing}</p>
             <hr className="origin__rule" aria-hidden="true" />
-            <p className="origin__conclusion">{origin.conclusion}</p>
+            <span className="eyebrow origin__mission-label">
+              {origin.missionLabel}
+            </span>
+            <div className="origin__mission">
+              <span className="origin__mission-icon" aria-hidden="true">
+                <ProcessIcon type="mountain" />
+              </span>
+              <b>{origin.mission}</b>
+            </div>
           </div>
           <figure className="origin__media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -504,8 +539,41 @@ export default function Home() {
               {origin.image.caption}
             </figcaption>
           </figure>
+
+          {/* That's why we built TACEDGE */}
+          <div className="origin-built">
+            <span className="origin-built__label">{origin.builtLabel}</span>
+            <ol className="origin-built__row">
+              {origin.built.map((item, i) => (
+                <li key={item.key}>
+                  <span className="origin-built__icon" aria-hidden="true">
+                    <ProcessIcon type={item.key} />
+                  </span>
+                  <span className="origin-built__text">{item.label}</span>
+                  {i < origin.built.length - 1 && (
+                    <svg
+                      className="origin-built__arrow"
+                      width="30"
+                      height="12"
+                      viewBox="0 0 34 12"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M1 6h30M26 1.5 31 6l-5 4.5" />
+                    </svg>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+          <p className="origin__foundation">{origin.foundation}</p>
         </div>
       </section>
+
 
       {/* Demonstration CTA */}
       <section className="section">
