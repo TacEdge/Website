@@ -459,30 +459,65 @@ export default function Home() {
         <div className="container section--tight origin">
           <div className="origin__copy">
             <span className="eyebrow">{origin.eyebrow}</span>
-            <h2 className="heading-lg" style={{ color: "var(--cream)" }}>
-              {origin.header}
+            <h2 className="heading-lg origin__heading">
+              {origin.headerLines.map((line) => (
+                <span className="origin__hline" key={line}>
+                  {line}{" "}
+                </span>
+              ))}
             </h2>
             <div className="prose prose--dark" style={{ marginTop: 24 }}>
               {origin.body.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
-            <div style={{ marginTop: 32 }}>
+            <hr className="origin__rule" aria-hidden="true" />
+            <p className="origin__conclusion">{origin.conclusion}</p>
+            <div style={{ marginTop: 28 }}>
               <Link href="/about" className="btn btn--primary-inverse">
                 {origin.button}
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
+                </svg>
               </Link>
             </div>
           </div>
-          <div className="origin__media">
+          <figure className="origin__media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={product(origin.image.src)}
               alt={origin.image.alt}
               loading="lazy"
-              width={960}
-              height={624}
+              width={722}
+              height={555}
             />
-          </div>
+            <figcaption>
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m2.5 15 5-8 3.4 5.2L13 9.5l4.5 5.5z" />
+              </svg>
+              {origin.image.caption}
+            </figcaption>
+          </figure>
         </div>
       </section>
 

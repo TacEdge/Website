@@ -133,16 +133,18 @@ export const workTypes = {
 
 export const origin = {
   eyebrow: "Our story",
-  header: "Born from a real coordination gap.",
+  // Two intentional lines on wide desktop; wraps naturally below.
+  headerLines: ["Born from a real", "coordination gap."],
   body: [
-    "TacEdge began during the Whakaari / White Island recovery operation in 2019, when a complex multi-agency plan had to be drawn on a whiteboard and transferred to a single PowerPoint slide.",
-    "Experienced people delivered the operation, but there was no shared digital workspace where everyone could maintain the same current picture.",
-    "TacEdge exists to make shared clarity the normal way of working.",
+    "The idea for TACEDGE emerged during the 2019 Whakaari / White Island recovery operation, when a complex multi-agency plan had to be drawn on a whiteboard and condensed into a single PowerPoint slide.",
+    "The people involved were experienced. What was missing was a shared digital workspace where everyone could work from the same current picture—a coordination problem that also exists across complex field operations and ground-engineering delivery.",
   ],
+  conclusion: "TACEDGE exists to make shared clarity the normal way of working.",
   button: "Read our story",
   image: {
-    src: "photo-whakaari.webp",
-    alt: "Whakaari / White Island steaming across the water, with the TacEdge brandmark peaks in front",
+    src: "photo-whakaari-2019.webp",
+    alt: "Whakaari / White Island viewed from the water in 2019",
+    caption: "Whakaari / White Island, 2019",
   },
 };
 
