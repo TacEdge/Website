@@ -23,16 +23,21 @@ export const proofStrip = {
 
 export const problem = {
   eyebrow: "The problem",
-  header: "The record breaks at the handoff.",
+  // Two intentional lines on wide desktop; wraps naturally below.
+  headerLines: ["The record breaks", "at the handover."],
   body: [
-    "Logbooks, sign-on sheets, safety records and field notes begin at the workface, then get re-keyed and reinterpreted at every link in the chain.",
-    "By the time the record reaches the project manager or engineer, it is late, incomplete or difficult to verify.",
-    "Then comes the variation, the claim or project closeout, and the evidence needed was never captured clearly at source.",
+    "Logbooks, sign-on sheets, safety records and field notes begin at the workface, then get re-keyed and reinterpreted at every link in the chain. By the time the record reaches the project manager or engineer, it is often late, incomplete or difficult to verify.",
+    "When the variation, claim or closeout arrives, the evidence needed was never captured clearly at source.",
   ],
-  pullquote:
-    "Paper does not just slow the work. It weakens your commercial position.",
+  stages: [
+    { key: "workface", name: "Workface", status: "Captured" },
+    { key: "office", name: "Site office", status: "Re-keyed" },
+    { key: "pm", name: "Project manager", status: "Delayed" },
+    { key: "engineer", name: "Engineer", status: "Hard to verify" },
+  ],
+  callout: "Paper does not just slow the work. It puts your margin at risk.",
   after:
-    "Most digital tools are too complex at the point of use. When the crew returns to the logbook, the information chain breaks exactly where the work happens.",
+    "Most digital tools fail at the point of use. When crews fall back to the logbook, the information chain breaks exactly where the work happens.",
 };
 
 export const workflow = {

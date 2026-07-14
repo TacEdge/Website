@@ -16,6 +16,59 @@ import {
 
 const product = (file: string) => `${basePath}/product/${file}`;
 
+/* Outline icons for the handover process strip, matching the site's
+   single-stroke icon language. Decorative: meaning is in the labels. */
+const PROCESS_ICONS: Record<string, React.ReactNode> = {
+  // Hard hat
+  workface: (
+    <>
+      <path d="M4.5 15.5a7.5 7.5 0 0 1 15 0" />
+      <path d="M3.5 15.5h17M10 8.5V6h4v2.5" />
+    </>
+  ),
+  // Clipboard with ticks
+  office: (
+    <>
+      <rect x="6" y="4.5" width="12" height="16" rx="1.6" />
+      <path d="M9.5 4.5V3h5v1.5" />
+      <path d="m9 10.5 1.4 1.4 2.6-2.9M9 15.5l1.4 1.4 2.6-2.9" />
+    </>
+  ),
+  // Clock
+  pm: (
+    <>
+      <circle cx="12" cy="12" r="8.2" />
+      <path d="M12 7.5V12l3 2.2" />
+    </>
+  ),
+  // Magnifier
+  engineer: (
+    <>
+      <circle cx="10.5" cy="10.5" r="6.2" />
+      <path d="m15.2 15.2 4.8 4.8" />
+    </>
+  ),
+};
+
+function ProcessIcon({ type }: { type: string }) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      {PROCESS_ICONS[type]}
+    </svg>
+  );
+}
+
 function PhaseArrow({ className }: { className?: string }) {
   return (
     <svg
@@ -141,19 +194,54 @@ export default function Home() {
       </section>
 
       {/* The problem */}
-      <section className="section">
+      <section className="section--tight">
         <div className="container problem">
           <div className="problem__main">
             <span className="eyebrow">{problem.eyebrow}</span>
-            <h2 className="heading-lg">{problem.header}</h2>
+            <h2 className="heading-lg problem__heading">
+              {problem.headerLines.map((line) => (
+                <span className="problem__hline" key={line}>
+                  {line}{" "}
+                </span>
+              ))}
+            </h2>
             <div className="prose" style={{ marginTop: 24 }}>
               {problem.body.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
+            <ol className="process">
+              {problem.stages.map((stage, i) => (
+                <li key={stage.key}>
+                  <span className="process__icon">
+                    <ProcessIcon type={stage.key} />
+                  </span>
+                  <span className="process__text">
+                    <b>{stage.name}</b>
+                    <small>{stage.status}</small>
+                  </span>
+                  {i < problem.stages.length - 1 && (
+                    <svg
+                      className="process__arrow"
+                      width="34"
+                      height="12"
+                      viewBox="0 0 34 12"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M1 6h30M26 1.5 31 6l-5 4.5" />
+                    </svg>
+                  )}
+                </li>
+              ))}
+            </ol>
           </div>
           <div className="problem__aside">
-            <blockquote className="pullquote">{problem.pullquote}</blockquote>
+            <h3 className="problem__callout">{problem.callout}</h3>
             <p className="problem__after">{problem.after}</p>
           </div>
         </div>
