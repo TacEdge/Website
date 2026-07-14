@@ -5,8 +5,9 @@
 
 :root {
   /* Brand — locked, from the product design system */
-  --forest: #2B4721;      /* primary. Headers, primary buttons, dark sections */
-  --forest-2: #36592A;    /* hover / secondary green */
+  --forest: #112411;      /* primary. Headers, primary buttons, dark sections */
+  --forest-2: #1A3219;    /* hover / secondary green */
+  --forest-line: #1B331A; /* contour linework over forest surfaces */
   --olive: #6E7D5C;       /* working mid-tone. Secondary marks, muted accents */
   --olive-edge: #AEB89C;  /* green hairline / selected edge */
   --sage: #B2B594;        /* quiet surface. Labels on dark, quiet accents */
@@ -384,9 +385,9 @@ button { font: inherit; }
 }
 .contour path {
   fill: none;
-  stroke: var(--cream);
+  stroke: var(--forest-line);
   stroke-width: 1.1;
-  opacity: .05;
+  opacity: .45;
 }
 
 /* ============================================================

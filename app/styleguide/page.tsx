@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 };
 
 const brand = [
-  ["--forest", "#2B4721", "Primary. Headers, primary buttons, dark sections"],
-  ["--forest-2", "#36592A", "Hover / secondary green"],
+  ["--forest", "#112411", "Primary. Headers, primary buttons, dark sections"],
+  ["--forest-2", "#1A3219", "Hover / secondary green"],
   ["--olive", "#6E7D5C", "Working mid-tone"],
   ["--olive-edge", "#AEB89C", "Green hairline / selected edge"],
   ["--sage", "#B2B594", "Quiet surface, labels on dark"],
