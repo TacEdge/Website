@@ -1059,7 +1059,7 @@ button { font: inherit; }
 
 .worktypes-label {
   display: block;
-  margin: 44px 0 16px;
+  margin: 32px 0 16px;
 }
 .worktypes-label + .worktypes-label { margin-top: 0; }
 
@@ -1103,10 +1103,10 @@ button { font: inherit; }
   gap: 20px;
 }
 .worktype {
-  padding: 22px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 .worktype__icon { color: var(--forest-2); }
 .worktype__name {

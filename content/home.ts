@@ -126,7 +126,7 @@ export const workTypes = {
   eyebrow: "Work types",
   header: "One workflow. Configured to the work.",
   support:
-    "TACEDGE is being proven on anchoring and drilling projects, with the same connected record adaptable to adjacent ground-engineering workflows.",
+    "Built first for anchoring and drilling. Adaptable to adjacent ground-engineering work.",
   focusLabel: "Current focus",
   focus: [
     {
