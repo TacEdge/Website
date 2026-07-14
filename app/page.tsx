@@ -182,28 +182,33 @@ export default function Home() {
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product("hero-map.webp")}
-                alt="TacEdge project management view: spillway anchors plotted over a site photograph, with status filters and a selected anchor's drill and QA state"
-                width={1800}
-                height={1125}
+                src={product("tacedge-work-plan-desktop.webp")}
+                alt="TacEdge desktop project setup showing an anchoring work plan, project zones and planned anchor locations"
+                width={1600}
+                height={1102}
               />
             </div>
             <div className="phone-frame hero__phone">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product("phone-drill-log.webp")}
-                alt="TacEdge operator phone: drill log capture for anchor B12 with large depth entry controls"
+                src={product("tacedge-field-capture-mobile.webp")}
+                alt="TacEdge mobile field-capture interface showing anchor depth and lithology recording"
                 width={640}
-                height={1918}
+                height={1057}
               />
             </div>
-            <div className="float-card hero__record">
+            <div className="browser-frame hero__qa">
+              <div className="browser-frame__bar" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product("record-released.webp")}
-                alt="TacEdge confirmed work item record: anchor B01 released to the engineer with depth, test result and five of five evidence requirements met"
-                width={900}
-                height={767}
+                src={product("tacedge-qa-queue-desktop.webp")}
+                alt="TacEdge desktop QA Queue showing submitted evidence, test results and record approval"
+                width={1200}
+                height={871}
               />
             </div>
           </div>

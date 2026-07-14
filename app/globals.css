@@ -559,39 +559,52 @@ button { font: inherit; }
 }
 .hero__actions .btn { padding-inline: 20px; }
 
+/* Layered composition: Work Plan (Configure) at the back, mobile capture
+   (Capture) front-left, QA Queue (Confirm) front-right. */
 .hero__visual {
   position: relative;
-  padding-bottom: 88px;
+  padding-bottom: 13%;
   min-width: 0;
 }
 .hero__map {
-  width: 100%;
+  width: 76%;
+  margin-left: auto;
 }
 .hero__phone {
   position: absolute;
-  bottom: 0;
-  left: -2%;
-  width: 26%;
-  aspect-ratio: 39 / 68;
+  top: 15%;
+  left: 0;
+  width: 24%;
+  aspect-ratio: 1160 / 1915;
   z-index: 2;
 }
-.hero__record {
+.hero__qa {
   position: absolute;
-  bottom: 26px;
+  bottom: 0;
   right: 0;
-  width: 50%;
+  width: 47%;
   z-index: 1;
 }
 
 @media (max-width: 1080px) {
   .hero { grid-template-columns: 1fr; gap: 56px; min-height: 0; }
   .hero__visual { max-width: 680px; }
-  .hero__phone { left: 0; }
 }
 @media (max-width: 720px) {
-  .hero__visual { padding-bottom: 64px; }
-  .hero__phone { width: 27%; }
-  .hero__record { width: 54%; }
+  /* Simplified readable stack: Configure, then Capture, then Confirm */
+  .hero__visual { padding-bottom: 0; }
+  .hero__map { width: 100%; }
+  .hero__phone {
+    position: static;
+    width: 56%;
+    max-width: 250px;
+    margin-top: 16px;
+  }
+  .hero__qa {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
   .hero__actions .btn { flex: 1 1 100%; }
 }
 
