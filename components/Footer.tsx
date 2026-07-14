@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { nav, footer } from "@/content/site";
+import { nav, cta, footer } from "@/content/site";
 import { basePath } from "@/lib/base-path";
 
+/**
+ * Three-column footer mirroring the simplified navigation:
+ * brand, pages (plus privacy), contact.
+ */
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -25,6 +29,9 @@ export default function Footer() {
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
+              <li>
+                <Link href="/privacy">Privacy</Link>
+              </li>
             </ul>
           </div>
           <div className="site-footer__col">
@@ -34,18 +41,7 @@ export default function Footer() {
                 <a href={`mailto:${footer.email}`}>{footer.email}</a>
               </li>
               <li>
-                <Link href="/contact">Arrange a demonstration</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="site-footer__col">
-            <h3>Company</h3>
-            <ul>
-              <li>
-                <Link href="/privacy">Privacy</Link>
-              </li>
-              <li>
-                <p>{footer.company}</p>
+                <Link href={cta.href}>{cta.label}</Link>
               </li>
             </ul>
           </div>

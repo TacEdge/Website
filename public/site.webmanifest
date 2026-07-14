@@ -1,0 +1,13 @@
+{
+  "name": "TACEDGE",
+  "short_name": "TACEDGE",
+  "description": "The field platform for ground-engineering delivery.",
+  "icons": [
+    { "src": "brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#2B4721",
+  "background_color": "#F7F5EC",
+  "display": "browser",
+  "start_url": "./"
+}

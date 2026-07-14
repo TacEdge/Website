@@ -5,10 +5,14 @@ import Footer from "@/components/Footer";
 import { basePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
-  title: "TacEdge · Field platform for ground engineering delivery",
+  title: "TACEDGE · Field platform for ground engineering delivery",
   description:
-    "Set the project up once, capture the work where it happens, and release a confirmed record your engineer can trust. In production across New Zealand and Samoa.",
-  icons: { icon: `${basePath}/brand/favicon.svg` },
+    "Set the project up once, capture the work where it happens, and produce a confirmed record your engineer can trust. In production across New Zealand and Samoa.",
+  icons: {
+    icon: `${basePath}/brand/favicon.svg`,
+    apple: `${basePath}/brand/apple-touch-icon.png`,
+  },
+  manifest: `${basePath}/site.webmanifest`,
 };
 
 export default function RootLayout({

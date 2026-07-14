@@ -59,7 +59,7 @@ export const workflow = {
       outcome: "Everyone begins with the same definition of what must be delivered.",
       image: {
         src: "photo-configure-pm.webp",
-        alt: "Project manager at a desktop in the office, setting up a work plan of anchors and zones over a site photograph in TacEdge",
+        alt: "Project manager at a desktop in the office, setting up a work plan of anchors and zones over a site photograph in TACEDGE",
       },
     },
     {
@@ -76,7 +76,7 @@ export const workflow = {
       outcome: "The operator records once. The project manager sees it live.",
       image: {
         src: "photo-capture-abseil.webp",
-        alt: "Operator on ropes at a coastal rock face recording a drill log on a phone in TacEdge, drill rig visible behind",
+        alt: "Operator on ropes at a coastal rock face recording a drill log on a phone in TACEDGE, drill rig visible behind",
       },
     },
     {
@@ -93,7 +93,7 @@ export const workflow = {
       outcome: "The client receives a confirmed record, not unchecked raw submissions.",
       image: {
         src: "photo-confirm-engineer.webp",
-        alt: "Engineer at a desk reviewing a passed TacEdge anchor test report on a desktop monitor",
+        alt: "Engineer at a desk reviewing a passed TACEDGE anchor test report on a desktop monitor",
       },
     },
   ],
@@ -140,17 +140,16 @@ export const origin = {
     "The people involved were experienced. What was missing was a shared digital workspace where everyone could work from the same current picture—a coordination problem that also exists across complex field operations and ground-engineering delivery.",
   ],
   conclusion: "TACEDGE exists to make shared clarity the normal way of working.",
-  button: "Read our story",
   image: {
-    src: "photo-whakaari-island.webp",
-    alt: "Whakaari / White Island viewed from the water in 2019, with the TACEDGE brandmark peaks in front",
+    src: "photo-whakaari-story.webp",
+    alt: "Whakaari / White Island viewed from the water in 2019",
     caption: "Whakaari / White Island, 2019",
   },
 };
 
 export const closing = {
-  header: "See it on a live project.",
-  body: "Bring a current project, work type or reporting problem. In fifteen minutes, we'll show how TacEdge would structure it.",
+  header: "See TACEDGE on your project.",
+  body: "Bring a current project, work type or reporting problem. In fifteen minutes, we'll show how TACEDGE would structure it.",
   support: "Bring your engineer if useful.",
   button: "Arrange a demonstration",
 };

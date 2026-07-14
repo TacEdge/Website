@@ -2,8 +2,6 @@
 
 export const nav = [
   { label: "Home", href: "/" },
-  { label: "Platform", href: "/platform" },
-  { label: "Ground Engineering", href: "/ground-engineering" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -14,9 +12,8 @@ export const cta = {
 };
 
 export const footer = {
-  line: "The field platform for ground engineering delivery.",
+  line: "The field platform for ground-engineering delivery.",
   email: "mike@tacedge.co.nz",
-  company: "TacEdge",
-  copyright: `© ${new Date().getFullYear()} TacEdge. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} TACEDGE. All rights reserved.`,
   location: "New Zealand",
 };

@@ -183,7 +183,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("tacedge-work-plan-desktop.webp")}
-                alt="TacEdge desktop project setup showing an anchoring work plan, project zones and planned anchor locations"
+                alt="TACEDGE desktop project setup showing an anchoring work plan, project zones and planned anchor locations"
                 width={1600}
                 height={1102}
               />
@@ -192,7 +192,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("tacedge-field-capture-mobile.webp")}
-                alt="TacEdge mobile field-capture interface showing anchor depth and lithology recording"
+                alt="TACEDGE mobile field-capture interface showing anchor depth and lithology recording"
                 width={640}
                 height={1057}
               />
@@ -206,7 +206,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("tacedge-qa-queue-desktop.webp")}
-                alt="TacEdge desktop QA Queue showing submitted evidence, test results and record approval"
+                alt="TACEDGE desktop QA Queue showing submitted evidence, test results and record approval"
                 width={1200}
                 height={871}
               />
@@ -405,20 +405,6 @@ export default function Home() {
                   <h3>{t.name}</h3>
                   <p>{t.copy}</p>
                 </div>
-                <span className="worktype__arrow" aria-hidden="true">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
-                  </svg>
-                </span>
               </li>
             ))}
           </ul>
@@ -429,23 +415,7 @@ export default function Home() {
           <ul className="worktypes">
             {workTypes.adjacent.map((t) => (
               <li className="card worktype" key={t}>
-                <span className="worktype__head">
-                  <WorkTypeIcon type={t} />
-                  <span className="worktype__arrow" aria-hidden="true">
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
-                    </svg>
-                  </span>
-                </span>
+                <WorkTypeIcon type={t} />
                 <span className="worktype__name">{t}</span>
               </li>
             ))}
@@ -473,24 +443,6 @@ export default function Home() {
             </div>
             <hr className="origin__rule" aria-hidden="true" />
             <p className="origin__conclusion">{origin.conclusion}</p>
-            <div style={{ marginTop: 28 }}>
-              <Link href="/about" className="btn btn--primary-inverse">
-                {origin.button}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
-                </svg>
-              </Link>
-            </div>
           </div>
           <figure className="origin__media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -498,8 +450,8 @@ export default function Home() {
               src={product(origin.image.src)}
               alt={origin.image.alt}
               loading="lazy"
-              width={960}
-              height={623}
+              width={722}
+              height={555}
             />
             <figcaption>
               <svg

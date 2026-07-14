@@ -2,24 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav, cta } from "@/content/site";
+import { nav } from "@/content/site";
 import { basePath } from "@/lib/base-path";
 
 const normalise = (p: string) => p.replace(/\/+$/, "") || "/";
 
 /**
- * Forest top bar. Wordmark alone — no workspace descriptor lockup.
- * The active nav item carries a fine sage underline; the homepage is the
- * Ground Engineering front door, so it highlights Ground Engineering.
+ * Forest top bar. Simplified navigation: Home, About, Contact. The hero
+ * carries the demonstration CTA, so the header stays open and calm.
+ * The active item carries a fine sage underline plus aria-current.
  */
 export default function Header() {
   const pathname = normalise(usePathname() ?? "/");
-  const active = pathname === "/" ? "/ground-engineering" : pathname;
 
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link href="/" className="site-header__logo" aria-label="TacEdge home">
+        <Link href="/" className="site-header__logo" aria-label="TACEDGE home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/brand/tacedge-lockup-cream.svg`}
@@ -33,14 +32,11 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              aria-current={normalise(item.href) === active ? "page" : undefined}
+              aria-current={normalise(item.href) === pathname ? "page" : undefined}
             >
               {item.label}
             </Link>
           ))}
-          <Link href={cta.href} className="btn btn--primary-inverse">
-            {cta.label}
-          </Link>
         </nav>
       </div>
     </header>

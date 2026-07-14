@@ -3,7 +3,7 @@ import ContourMotif from "@/components/ContourMotif";
 import { basePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
-  title: "Style reference · TacEdge",
+  title: "Style reference · TACEDGE",
   robots: { index: false, follow: false },
 };
 
@@ -221,7 +221,7 @@ export default function Styleguide() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`${basePath}/brand/tacedge-brandmark-sage.svg`} alt="TacEdge brandmark" width={64} height={59} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${basePath}/brand/favicon.svg`} alt="TacEdge app icon" width={64} height={59} />
+            <img src={`${basePath}/brand/favicon.svg`} alt="TACEDGE app icon" width={64} height={59} />
             <span className="eyebrow" style={{ margin: 0 }}>Brandmark · app icon</span>
           </div>
         </div>
