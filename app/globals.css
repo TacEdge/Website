@@ -664,19 +664,20 @@ button { font: inherit; }
   margin-bottom: 22px;
 }
 
-/* Icon-led problem statements */
+/* Icon-led problem statements, ruled apart by hairlines */
 .problem-points {
   list-style: none;
-  margin: 30px 0 0;
+  margin: 26px 0 0;
   padding: 0;
-  display: grid;
-  gap: 20px;
 }
 .problem-points li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
+  padding-block: 15px;
 }
+.problem-points li:first-child { padding-top: 0; }
+.problem-points li + li { border-top: 1px solid var(--line); }
 .problem-points__icon {
   flex-shrink: 0;
   width: 44px;
@@ -689,19 +690,19 @@ button { font: inherit; }
   justify-content: center;
 }
 .problem-points p {
-  color: var(--ink-60);
+  color: var(--ink);
+  font-weight: 600;
   font-size: var(--fs-lg);
-  line-height: 1.55;
+  line-height: 1.45;
   max-width: 48ch;
-  padding-top: 8px;
 }
 
 /* Cost panel */
 .cost {
   margin-top: 26px;
-  background: var(--tint);
+  background: var(--sage-tint);
   border-radius: var(--r-lg);
-  padding: 20px 22px 8px;
+  padding: 20px 22px 10px;
 }
 .cost__head {
   display: flex;
@@ -709,6 +710,7 @@ button { font: inherit; }
   gap: 12px;
   padding-bottom: 14px;
   font-size: var(--fs-md);
+  font-weight: 600;
   color: var(--ink);
 }
 .cost__icon {
@@ -716,7 +718,7 @@ button { font: inherit; }
   width: 38px;
   height: 38px;
   border-radius: var(--r-pill);
-  background: var(--sage-tint);
+  border: 1.5px solid var(--olive-edge);
   color: var(--forest-2);
   display: inline-flex;
   align-items: center;
@@ -731,22 +733,23 @@ button { font: inherit; }
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-block: 11px;
-  border-top: 1px solid var(--line-2);
+  padding-block: 9px;
+  border-top: 1px solid rgba(110, 125, 92, 0.28);
   font-size: var(--fs-md);
   color: var(--ink);
 }
-.cost__x {
+.cost__ic {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--r-pill);
-  background: var(--sage);
-  color: var(--cream);
+  border: 1.5px solid var(--olive-edge);
+  color: var(--forest-2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+.cost__ic svg { width: 18px; height: 18px; }
 .problem__callout {
   font-size: clamp(24px, 2.5vw, 32px);
   line-height: 1.22;

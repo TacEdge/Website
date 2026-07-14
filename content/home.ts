@@ -15,50 +15,51 @@ export const hero = {
 export const problem = {
   eyebrow: "The problem",
   // Two intentional lines on wide desktop; wraps naturally below.
-  headerLines: ["The project manager", "has to rebuild the record."],
+  headerLines: ["Field data becomes", "project overhead."],
   points: [
     {
-      key: "sources",
-      copy: "Field information arrives through paper, apps, calls, texts and photos—not as one live record.",
+      key: "fragmented",
+      copy: "Field records arrive fragmented—or go missing.",
     },
     {
       key: "rekey",
-      copy: "The project manager chases, reconciles and re-keys it into logs, spreadsheets and reports.",
+      copy: "Project managers spend hours chasing, entering and reconciling the data into reports.",
     },
     {
       key: "late",
-      copy: "By the time the engineer receives it, the information is already late.",
+      copy: "Engineers receive delayed, reconstructed reports that are hard to verify.",
     },
   ],
   stages: [
     {
       key: "workface",
       name: "Workface",
-      status: "Fragmented capture",
-      meta: "Paper · apps · calls · texts · photos",
+      status: "Fragmented data",
+      meta: "Paper · forms · apps · calls · photos",
     },
     {
-      key: "rekey",
+      key: "pm",
       name: "Project manager",
-      status: "Chased, re-keyed, compiled",
+      status: "Entered and compiled",
       meta: "Logs · spreadsheets · reports",
     },
     {
       key: "engineer",
       name: "Engineer",
-      status: "Delayed report",
-      meta: "Incomplete · hard to verify",
+      status: "Reconstructed report",
+      meta: "Delayed · incomplete · hard to verify",
     },
   ],
-  callout: "Project managers should check the work—not rebuild the report.",
+  callout: "Project managers should assure the work—not assemble the report.",
   after:
-    "Information should arrive structured, leaving the PM to review exceptions and release a trusted report.",
+    "Live, structured field data leaves the PM to review exceptions and release a trusted report.",
   cost: {
     title: "The cost of the current way",
     items: [
-      "Hours lost re-keying",
-      "Late, incomplete reports",
-      "Higher risk, lower margins",
+      { key: "late", label: "Hours or days of data entry" },
+      { key: "xcirc", label: "Missing evidence" },
+      { key: "calendar", label: "Delayed reports" },
+      { key: "warn", label: "Higher risk. Lower margin." },
     ],
   },
 };

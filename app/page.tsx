@@ -25,12 +25,12 @@ const PROCESS_ICONS: Record<string, React.ReactNode> = {
       <path d="M3.5 15.5h17M10 8.5V6h4v2.5" />
     </>
   ),
-  // Document / field paperwork
-  sources: (
+  // Overlapping pages / fragmented records
+  fragmented: (
     <>
-      <path d="M7 3.5h7l4 4V20.5H7z" />
-      <path d="M14 3.5V8h4" />
-      <path d="M9.5 12.5h5M9.5 16h5" />
+      <rect x="8.5" y="8" width="11" height="12.5" rx="1.5" />
+      <path d="M6 16.5V5.2A1.7 1.7 0 0 1 7.7 3.5H15" />
+      <path d="M11.5 12.5h5M11.5 16h5" />
     </>
   ),
   // Spreadsheet grid
@@ -48,10 +48,39 @@ const PROCESS_ICONS: Record<string, React.ReactNode> = {
     </>
   ),
   // Person
-  engineer: (
+  pm: (
     <>
       <circle cx="12" cy="8.4" r="3.4" />
       <path d="M5.5 20c.8-3.6 3.4-5.4 6.5-5.4s5.7 1.8 6.5 5.4" />
+    </>
+  ),
+  // Person in a hard hat
+  engineer: (
+    <>
+      <path d="M8.1 7.9a3.9 3.9 0 0 1 7.8 0v.5H8.1z" />
+      <path d="M9.2 10.6a2.9 2.9 0 0 0 5.6 0" />
+      <path d="M5.5 20c.8-3.4 3.4-5.2 6.5-5.2s5.7 1.8 6.5 5.2" />
+    </>
+  ),
+  // Calendar
+  calendar: (
+    <>
+      <rect x="4.5" y="6" width="15" height="14" rx="1.6" />
+      <path d="M4.5 10.5h15M8.5 6V4M15.5 6V4" />
+    </>
+  ),
+  // Cross in circle
+  xcirc: (
+    <>
+      <circle cx="12" cy="12" r="8.2" />
+      <path d="m9.2 9.2 5.6 5.6M14.8 9.2l-5.6 5.6" />
+    </>
+  ),
+  // Warning triangle
+  warn: (
+    <>
+      <path d="M12 4.6 20.4 19H3.6z" />
+      <path d="M12 10.2v3.8M12 16.6v.4" />
     </>
   ),
   // Clipboard with a single check
@@ -321,7 +350,7 @@ export default function Home() {
           </div>
           <div className="problem__aside">
             <span className="problem__aside-icon" aria-hidden="true">
-              <ProcessIcon type="clipcheck" />
+              <ProcessIcon type="record" />
             </span>
             <h3 className="problem__callout">{problem.callout}</h3>
             <p className="problem__after">{problem.after}</p>
@@ -334,21 +363,11 @@ export default function Home() {
               </div>
               <ul className="cost__items">
                 {problem.cost.items.map((item) => (
-                  <li key={item}>
-                    <span className="cost__x" aria-hidden="true">
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.4"
-                        strokeLinecap="round"
-                      >
-                        <path d="m5 5 10 10M15 5 5 15" />
-                      </svg>
+                  <li key={item.key}>
+                    <span className="cost__ic" aria-hidden="true">
+                      <ProcessIcon type={item.key} />
                     </span>
-                    {item}
+                    {item.label}
                   </li>
                 ))}
               </ul>
