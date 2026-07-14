@@ -102,7 +102,7 @@ export const workflow = {
       role: "Project Manager / Engineer",
       copy: "Submitted records enter QA before release to the engineer or client.",
       items: ["QA review", "Evidence verification", "Controlled release"],
-      outcome: "The client receives a confirmed record.",
+      outcome: "The client receives a confirmed report.",
       image: {
         src: "photo-confirm-engineer.webp",
         alt: "Engineer at a desk reviewing a passed TACEDGE anchor test report on a desktop monitor",
@@ -115,7 +115,7 @@ export const workflow = {
 // within Confirm; it is never a fourth stage.
 export const record = {
   header: "One work item. One connected record.",
-  body: "Its setup, field evidence, QA status and release history remain connected from the workface through to closeout.",
+  body: "Setup, capture, QA and release stay connected from field to closeout.",
   stages: [
     { key: "configured", label: "Configured" },
     { key: "captured", label: "Captured" },
@@ -161,8 +161,6 @@ export const origin = {
     { key: "activity", label: "Capture the activity." },
     { key: "record", label: "Confirm the record." },
   ],
-  foundation:
-    "Shared clarity isn’t a feature. It’s the foundation of how we work in the field.",
   image: {
     src: "photo-whakaari-peaks.webp",
     alt: "Whakaari / White Island viewed from the water in 2019, with the TACEDGE brandmark peaks in front",

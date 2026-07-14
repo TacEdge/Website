@@ -1,8 +1,41 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { basePath } from "@/lib/base-path";
+
+/* Brand fonts, self-hosted so the site does not depend on a third-party
+   CDN and renders identically everywhere. */
+const play = localFont({
+  src: [
+    { path: "./fonts/play-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/play-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const beVietnamPro = localFont({
+  src: [
+    { path: "./fonts/be-vietnam-pro-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/be-vietnam-pro-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/be-vietnam-pro-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/be-vietnam-pro-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-ui",
+  display: "swap",
+});
+
+const jetbrainsMono = localFont({
+  src: [
+    { path: "./fonts/jetbrains-mono-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/jetbrains-mono-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/jetbrains-mono-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "TACEDGE · Field platform for ground engineering delivery",
@@ -19,19 +52,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-NZ">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en-NZ"
+      className={`${play.variable} ${beVietnamPro.variable} ${jetbrainsMono.variable}`}
+    >
       <body>
         <Header />
         <main>{children}</main>

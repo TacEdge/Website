@@ -174,8 +174,8 @@ const RECORD_STAGE_ICONS: Record<string, React.ReactNode> = {
 function RecordStageIcon({ type }: { type: string }) {
   return (
     <svg
-      width="17"
-      height="17"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -190,21 +190,53 @@ function RecordStageIcon({ type }: { type: string }) {
   );
 }
 
-function PhaseArrow({ className }: { className?: string }) {
+/* The one arrow used everywhere: buttons, process strips, card
+   transitions and the record strip. One head, one stroke. */
+function Arrow({
+  size = 16,
+  direction = "right",
+  className,
+}: {
+  size?: number;
+  direction?: "right" | "down";
+  className?: string;
+}) {
   return (
     <svg
       className={className}
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="1.7"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
+      focusable="false"
+      style={direction === "down" ? { transform: "rotate(90deg)" } : undefined}
     >
-      <path d="M5 14h17M15 7l7 7-7 7" />
+      <path d="M4.5 12h15M13 5.5 19.5 12 13 18.5" />
+    </svg>
+  );
+}
+
+/* Checkmark for included-item lists and status chips */
+function CheckIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="m4 10.6 3.8 3.8L16 6" />
     </svg>
   );
 }
@@ -230,35 +262,11 @@ export default function Home() {
             <div className="hero__actions">
               <Link href={cta.href} className="btn btn--primary-inverse">
                 {hero.ctaPrimary}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
-                </svg>
+                <Arrow />
               </Link>
               <a href="#workflow" className="btn btn--outline-inverse">
                 {hero.ctaSecondary}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M10 4v12M4.5 10.5 10 16l5.5-5.5" />
-                </svg>
+                <Arrow direction="down" />
               </a>
             </div>
           </div>
@@ -329,20 +337,7 @@ export default function Home() {
                     <span className="process__meta">{stage.meta}</span>
                   </span>
                   {i < problem.stages.length - 1 && (
-                    <svg
-                      className="process__arrow"
-                      width="34"
-                      height="12"
-                      viewBox="0 0 34 12"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M1 6h30M26 1.5 31 6l-5 4.5" />
-                    </svg>
+                    <Arrow className="process__arrow" size={22} />
                   )}
                 </li>
               ))}
@@ -415,19 +410,7 @@ export default function Home() {
                   <ul className="phase__items">
                     {phase.items.map((item) => (
                       <li key={item}>
-                        <svg
-                          width="15"
-                          height="15"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          aria-hidden="true"
-                        >
-                          <path d="m4 10.6 3.8 3.8L16 6" />
-                        </svg>
+                        <CheckIcon />
                         {item}
                       </li>
                     ))}
@@ -436,7 +419,7 @@ export default function Home() {
                 </article>
                 {i < workflow.phases.length - 1 && (
                   <div className="phase-handoff" aria-hidden="true">
-                    <PhaseArrow />
+                    <Arrow size={28} />
                   </div>
                 )}
               </li>
@@ -457,7 +440,7 @@ export default function Home() {
                     <b>{stage.label}</b>
                   </span>
                   {i < record.stages.length - 1 && (
-                    <PhaseArrow className="record-panel__arrow" />
+                    <Arrow className="record-panel__arrow" size={20} />
                   )}
                 </li>
               ))}
@@ -542,19 +525,7 @@ export default function Home() {
               height={623}
             />
             <figcaption>
-              <svg
-                width="17"
-                height="17"
-                viewBox="0 0 20 20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m2.5 15 5-8 3.4 5.2L13 9.5l4.5 5.5z" />
-              </svg>
+              <ProcessIcon type="mountain" />
               {origin.image.caption}
             </figcaption>
           </figure>
@@ -570,32 +541,17 @@ export default function Home() {
                   </span>
                   <span className="origin-built__text">{item.label}</span>
                   {i < origin.built.length - 1 && (
-                    <svg
-                      className="origin-built__arrow"
-                      width="30"
-                      height="12"
-                      viewBox="0 0 34 12"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M1 6h30M26 1.5 31 6l-5 4.5" />
-                    </svg>
+                    <Arrow className="origin-built__arrow" size={22} />
                   )}
                 </li>
               ))}
             </ol>
           </div>
-          <p className="origin__foundation">{origin.foundation}</p>
         </div>
       </section>
 
-
       {/* Demonstration CTA */}
-      <section className="section">
+      <section className="section--tight">
         <div className="container">
           <div className="cta-panel">
             <ContourMotif />
@@ -607,6 +563,7 @@ export default function Home() {
             <div style={{ marginTop: 32 }}>
               <Link href={cta.href} className="btn btn--primary">
                 {closing.button}
+                <Arrow />
               </Link>
             </div>
           </div>
