@@ -15,7 +15,7 @@ import {
 
 const product = (file: string) => `${basePath}/product/${file}`;
 
-/* Outline icons for the handover process strip, matching the site's
+/* Outline icons for the problem section, matching the site's
    single-stroke icon language. Decorative: meaning is in the labels. */
 const PROCESS_ICONS: Record<string, React.ReactNode> = {
   // Hard hat
@@ -25,26 +25,48 @@ const PROCESS_ICONS: Record<string, React.ReactNode> = {
       <path d="M3.5 15.5h17M10 8.5V6h4v2.5" />
     </>
   ),
-  // Clipboard with ticks
-  office: (
+  // Document / field paperwork
+  sources: (
     <>
-      <rect x="6" y="4.5" width="12" height="16" rx="1.6" />
-      <path d="M9.5 4.5V3h5v1.5" />
-      <path d="m9 10.5 1.4 1.4 2.6-2.9M9 15.5l1.4 1.4 2.6-2.9" />
+      <path d="M7 3.5h7l4 4V20.5H7z" />
+      <path d="M14 3.5V8h4" />
+      <path d="M9.5 12.5h5M9.5 16h5" />
+    </>
+  ),
+  // Spreadsheet grid
+  rekey: (
+    <>
+      <rect x="4.5" y="5" width="15" height="14.5" rx="1.5" />
+      <path d="M4.5 10h15M9.7 10v9.5M14.9 10v9.5" />
     </>
   ),
   // Clock
-  pm: (
+  late: (
     <>
       <circle cx="12" cy="12" r="8.2" />
       <path d="M12 7.5V12l3 2.2" />
     </>
   ),
-  // Magnifier
+  // Person
   engineer: (
     <>
-      <circle cx="10.5" cy="10.5" r="6.2" />
-      <path d="m15.2 15.2 4.8 4.8" />
+      <circle cx="12" cy="8.4" r="3.4" />
+      <path d="M5.5 20c.8-3.6 3.4-5.4 6.5-5.4s5.7 1.8 6.5 5.4" />
+    </>
+  ),
+  // Clipboard with a single check
+  clipcheck: (
+    <>
+      <rect x="6" y="4.5" width="12" height="16" rx="1.6" />
+      <path d="M9.5 4.5V3h5v1.5" />
+      <path d="m9 12.5 2 2 4-4.3" />
+    </>
+  ),
+  // Dollar coin
+  cost: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7.2v9.6M14.6 9.4c-.6-.9-1.6-1.4-2.6-1.4-1.4 0-2.4.8-2.4 1.9s.9 1.6 2.4 1.9 2.6.8 2.6 2-1.1 2-2.6 2c-1 0-2-.5-2.6-1.4" />
     </>
   ),
 };
@@ -230,11 +252,16 @@ export default function Home() {
                 </span>
               ))}
             </h2>
-            <div className="prose" style={{ marginTop: 24 }}>
-              {problem.body.map((p) => (
-                <p key={p.slice(0, 24)}>{p}</p>
+            <ul className="problem-points">
+              {problem.points.map((point) => (
+                <li key={point.key}>
+                  <span className="problem-points__icon" aria-hidden="true">
+                    <ProcessIcon type={point.key} />
+                  </span>
+                  <p>{point.copy}</p>
+                </li>
               ))}
-            </div>
+            </ul>
             <ol className="process">
               {problem.stages.map((stage, i) => (
                 <li key={stage.key}>
@@ -244,6 +271,7 @@ export default function Home() {
                   <span className="process__text">
                     <b>{stage.name}</b>
                     <small>{stage.status}</small>
+                    <span className="process__meta">{stage.meta}</span>
                   </span>
                   {i < problem.stages.length - 1 && (
                     <svg
@@ -266,8 +294,39 @@ export default function Home() {
             </ol>
           </div>
           <div className="problem__aside">
+            <span className="problem__aside-icon" aria-hidden="true">
+              <ProcessIcon type="clipcheck" />
+            </span>
             <h3 className="problem__callout">{problem.callout}</h3>
             <p className="problem__after">{problem.after}</p>
+            <div className="cost">
+              <div className="cost__head">
+                <span className="cost__icon" aria-hidden="true">
+                  <ProcessIcon type="cost" />
+                </span>
+                <b>{problem.cost.title}</b>
+              </div>
+              <ul className="cost__items">
+                {problem.cost.items.map((item) => (
+                  <li key={item}>
+                    <span className="cost__x" aria-hidden="true">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                      >
+                        <path d="m5 5 10 10M15 5 5 15" />
+                      </svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

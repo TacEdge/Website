@@ -15,20 +15,52 @@ export const hero = {
 export const problem = {
   eyebrow: "The problem",
   // Two intentional lines on wide desktop; wraps naturally below.
-  headerLines: ["The record breaks", "at the handover."],
-  body: [
-    "Logbooks, sign-on sheets, safety records and field notes begin at the workface, then get re-keyed and reinterpreted at every link in the chain. By the time the record reaches the project manager or engineer, it is often late, incomplete or difficult to verify.",
-    "When the variation, claim or closeout arrives, the evidence needed was never captured clearly at source.",
+  headerLines: ["The project manager", "has to rebuild the record."],
+  points: [
+    {
+      key: "sources",
+      copy: "Field information arrives through paper, apps, calls, texts and photos—not as one live record.",
+    },
+    {
+      key: "rekey",
+      copy: "The project manager chases, reconciles and re-keys it into logs, spreadsheets and reports.",
+    },
+    {
+      key: "late",
+      copy: "By the time the engineer receives it, the information is already late.",
+    },
   ],
   stages: [
-    { key: "workface", name: "Workface", status: "Captured" },
-    { key: "office", name: "Site office", status: "Re-keyed" },
-    { key: "pm", name: "Project manager", status: "Delayed" },
-    { key: "engineer", name: "Engineer", status: "Hard to verify" },
+    {
+      key: "workface",
+      name: "Workface",
+      status: "Fragmented capture",
+      meta: "Paper · apps · calls · texts · photos",
+    },
+    {
+      key: "rekey",
+      name: "Project manager",
+      status: "Chased, re-keyed, compiled",
+      meta: "Logs · spreadsheets · reports",
+    },
+    {
+      key: "engineer",
+      name: "Engineer",
+      status: "Delayed report",
+      meta: "Incomplete · hard to verify",
+    },
   ],
-  callout: "Paper does not just slow the work. It puts your margin at risk.",
+  callout: "Project managers should check the work—not rebuild the report.",
   after:
-    "Most digital tools fail at the point of use. When crews fall back to the logbook, the information chain breaks exactly where the work happens.",
+    "Information should arrive structured, leaving the PM to review exceptions and release a trusted report.",
+  cost: {
+    title: "The cost of the current way",
+    items: [
+      "Hours lost re-keying",
+      "Late, incomplete reports",
+      "Higher risk, lower margins",
+    ],
+  },
 };
 
 export const workflow = {
