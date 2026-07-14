@@ -143,7 +143,7 @@ export const origin = {
   button: "Read our story",
   image: {
     src: "photo-whakaari-2019.webp",
-    alt: "Whakaari / White Island viewed from the water in 2019",
+    alt: "Whakaari / White Island viewed from the water in 2019, with the TACEDGE brandmark peaks in front",
     caption: "Whakaari / White Island, 2019",
   },
 };
