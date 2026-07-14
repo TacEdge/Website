@@ -43,7 +43,13 @@ export default function Home() {
         <ContourMotif />
         <div className="container section hero">
           <div className="hero__copy">
-            <h1 className="heading-xl hero__headline">{hero.headline}</h1>
+            <h1 className="heading-xl hero__headline">
+              {hero.headlineLines.map((line) => (
+                <span className="hero__line" key={line}>
+                  {line}{" "}
+                </span>
+              ))}
+            </h1>
             <p className="sub">{hero.subhead}</p>
             <p className="hero__tagline">{hero.tagline}</p>
             <div className="hero__actions">
@@ -108,7 +114,7 @@ export default function Home() {
 
       {/* Production proof strip */}
       <section className="proof-strip" aria-label="In production">
-        <div className="container proof-strip__inner">
+        <div className="container">
           <span className="proof-strip__label">{proofStrip.label}</span>
           <ul className="proof-strip__points">
             {proofStrip.points.map((p) => (

@@ -75,6 +75,10 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 body {
   margin: 0;
   background: var(--cream);
@@ -303,7 +307,13 @@ button { font: inherit; }
   transition: opacity 140ms ease, background-color 140ms ease;
 }
 .site-nav a:not(.btn):hover { opacity: 1; background: rgba(247,245,236,.08); }
-.site-nav a[aria-current="page"] { opacity: 1; }
+.site-nav a[aria-current="page"] {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--sage);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 7px;
+}
 .site-nav .btn { min-height: 40px; padding: 8px 18px; margin-left: 8px; }
 
 @media (max-width: 880px) {
@@ -547,14 +557,19 @@ button { font: inherit; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
+  gap: 44px;
   align-items: center;
+  min-height: min(calc(100svh - 220px), 680px);
 }
 .hero__headline {
-  font-size: clamp(38px, 4.6vw, 58px);
-  max-width: 16ch;
+  font-size: clamp(34px, 3.3vw, 48px);
   color: var(--cream);
+  line-height: 1.12;
+}
+/* Three intentional headline lines on wide screens; natural wrap below */
+@media (min-width: 1081px) {
+  .hero__line { display: block; white-space: nowrap; }
 }
 .hero__tagline {
   margin-top: 16px;
@@ -572,32 +587,32 @@ button { font: inherit; }
 
 .hero__visual {
   position: relative;
-  padding-bottom: 84px;
+  padding-bottom: 88px;
   min-width: 0;
 }
 .hero__map {
-  width: 94%;
-  margin-left: auto;
+  width: 100%;
 }
 .hero__phone {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 24%;
+  left: -2%;
+  width: 26%;
   aspect-ratio: 39 / 68;
   z-index: 2;
 }
 .hero__record {
   position: absolute;
-  bottom: 12px;
+  bottom: 26px;
   right: 0;
-  width: 46%;
+  width: 50%;
   z-index: 1;
 }
 
 @media (max-width: 1080px) {
-  .hero { grid-template-columns: 1fr; gap: 56px; }
+  .hero { grid-template-columns: 1fr; gap: 56px; min-height: 0; }
   .hero__visual { max-width: 680px; }
+  .hero__phone { left: 0; }
 }
 @media (max-width: 720px) {
   .hero__visual { padding-bottom: 64px; }
@@ -613,39 +628,41 @@ button { font: inherit; }
 .proof-strip {
   background: var(--sage-tint);
   border-block: 1px solid var(--rule);
-}
-.proof-strip__inner {
-  display: flex;
-  align-items: center;
-  gap: 20px 40px;
-  flex-wrap: wrap;
-  padding-block: 22px;
+  padding-block: 26px;
 }
 .proof-strip__label {
+  display: block;
   font-family: var(--mono);
   font-size: var(--fs-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--forest);
-  white-space: nowrap;
+  margin-bottom: 16px;
 }
 .proof-strip__points {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 36px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 28px;
 }
 .proof-strip__points li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: var(--fs-base);
+  line-height: 1.45;
   color: var(--ink-60);
 }
-.proof-strip__points svg { color: var(--forest-2); flex-shrink: 0; }
+.proof-strip__points svg { color: var(--forest-2); flex-shrink: 0; margin-top: 2px; }
+@media (max-width: 1024px) {
+  .proof-strip__points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .proof-strip__points { grid-template-columns: 1fr; gap: 10px; }
+}
 
 /* ============================================================
    Problem

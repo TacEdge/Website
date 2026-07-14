@@ -2,9 +2,10 @@
 // revision). Edit only against an approved copy revision.
 
 export const hero = {
-  headline: "Shared operational clarity for ground engineering.",
+  // Three intentional lines on wide desktop; wraps naturally on mobile.
+  headlineLines: ["Shared operational", "clarity for ground", "engineering."],
   subhead:
-    "Set the project up once, capture the work where it happens, and release a confirmed record your engineer can trust.",
+    "Set the project up once, capture the work where it happens, and produce a confirmed record your engineer can trust.",
   tagline: "No chasing. No re-keying. No closeout reconstruction.",
   ctaPrimary: "Arrange a demonstration",
   ctaSecondary: "See the workflow",
@@ -15,8 +16,8 @@ export const proofStrip = {
   points: [
     "In production on drilling and anchoring projects",
     "Operating across sites in New Zealand and Samoa",
-    "Developed with ground engineering field partners",
-    "Shaped with field crews and project managers",
+    "Developed with ground engineering contractors",
+    "Used from field capture through to engineering closeout",
   ],
 };
 
