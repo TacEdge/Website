@@ -173,30 +173,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero__visual">
-            <div className="browser-frame hero__map">
-              <div className="browser-frame__bar" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={product("tacedge-work-plan-desktop.webp")}
-                alt="TACEDGE desktop project setup showing an anchoring work plan, project zones and planned anchor locations"
-                width={1600}
-                height={1102}
-              />
-            </div>
-            <div className="phone-frame hero__phone">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={product("tacedge-field-capture-mobile.webp")}
-                alt="TACEDGE mobile field-capture interface showing anchor depth and lithology recording"
-                width={640}
-                height={1057}
-              />
-            </div>
+          <figure
+            className="hero__visual"
+            aria-label="TACEDGE field capture feeding a desktop QA workflow where project records, evidence and test results can be reviewed and approved"
+          >
             <div className="browser-frame hero__qa">
               <div className="browser-frame__bar" aria-hidden="true">
                 <span />
@@ -206,12 +186,21 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("tacedge-qa-queue-desktop.webp")}
-                alt="TACEDGE desktop QA Queue showing submitted evidence, test results and record approval"
+                alt=""
                 width={1200}
                 height={871}
               />
             </div>
-          </div>
+            <div className="phone-frame hero__phone">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={product("tacedge-field-capture-mobile.webp")}
+                alt=""
+                width={640}
+                height={1057}
+              />
+            </div>
+          </figure>
         </div>
       </section>
 
