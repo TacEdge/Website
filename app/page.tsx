@@ -425,8 +425,8 @@ export default function Home() {
               src={product(origin.image.src)}
               alt={origin.image.alt}
               loading="lazy"
-              width={722}
-              height={555}
+              width={960}
+              height={623}
             />
             <figcaption>
               <svg

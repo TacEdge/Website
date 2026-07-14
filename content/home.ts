@@ -132,8 +132,8 @@ export const origin = {
   ],
   conclusion: "TACEDGE exists to make shared clarity the normal way of working.",
   image: {
-    src: "photo-whakaari-story.webp",
-    alt: "Whakaari / White Island viewed from the water in 2019",
+    src: "photo-whakaari-peaks.webp",
+    alt: "Whakaari / White Island viewed from the water in 2019, with the TACEDGE brandmark peaks in front",
     caption: "Whakaari / White Island, 2019",
   },
 };
