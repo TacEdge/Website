@@ -563,17 +563,19 @@ button { font: inherit; }
    (Capture) front-left, QA Queue (Confirm) front-right. */
 .hero__visual {
   position: relative;
-  padding-bottom: 13%;
+  padding-bottom: 7%;
   min-width: 0;
 }
 .hero__map {
   width: 76%;
   margin-left: auto;
 }
+/* Phone overlaps the Work Plan's lower-left; both foreground screens
+   share the composition's bottom edge, as in the approved reference. */
 .hero__phone {
   position: absolute;
-  top: 15%;
-  left: 0;
+  bottom: 0;
+  left: 5%;
   width: 24%;
   aspect-ratio: 1160 / 1915;
   z-index: 2;
