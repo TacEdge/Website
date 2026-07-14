@@ -4,10 +4,10 @@
 export const hero = {
   // The brand promise: two intentional lines on wide desktop.
   headlineLines: ["Shared", "Clarity."],
-  category: "The field platform for ground-engineering delivery.",
+  category: "For ground-engineering delivery.",
   subhead:
-    "Set the project up once, capture the work where it happens, and give your engineer a report they can trust.",
-  tagline: "No chasing. No re-keying. No closeout reconstruction.",
+    "Set the project up once. Capture the work where it happens. Give your engineer a confirmed report they can trust.",
+  tagline: "No chasing. No re-keying. No rebuilding the report.",
   ctaPrimary: "Arrange a demonstration",
   ctaSecondary: "See the workflow",
 };
