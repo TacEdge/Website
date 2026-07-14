@@ -41,15 +41,16 @@ export const problem = {
 };
 
 export const workflow = {
+  eyebrow: "The workflow",
   header: "Configure. Capture. Confirm.",
-  subheader: "One connected workflow from project setup to verified delivery.",
+  subheader: "One connected workflow from project setup to a confirmed record.",
   phases: [
     {
       key: "configure",
       title: "Configure",
       descriptor: "Set the project up once.",
       role: "Project Manager",
-      copy: "The project manager defines the layout, work items, sequence, testing standards and evidence requirements before work reaches the field.",
+      copy: "The project manager defines the layout, work sequence, testing standards and evidence required before work reaches the field.",
       items: [
         "Project layout and work areas",
         "Work plan and sequence",
@@ -66,14 +67,13 @@ export const workflow = {
       title: "Capture",
       descriptor: "Record the work where it happens.",
       role: "Operator",
-      copy: "Operators capture field activity through simple, task-specific workflows. The configured project context is already in place.",
+      copy: "Operators capture field activity through simple, task-specific workflows with the project context already in place.",
       items: [
-        "Offline-first capture",
-        "Large, simple field controls",
+        "Offline-first field capture",
+        "Simple controls for crews",
         "Photos, evidence and exceptions",
-        "Live progress visibility",
       ],
-      outcome: "The operator records. The project manager sees.",
+      outcome: "The operator records once. The project manager sees it live.",
       image: {
         src: "photo-capture-abseil.webp",
         alt: "Operator on ropes at a coastal rock face recording a drill log on a phone in TacEdge, drill rig visible behind",
@@ -84,20 +84,23 @@ export const workflow = {
       title: "Confirm",
       descriptor: "Verify and release.",
       role: "Project Manager / Engineer",
-      copy: "Submitted records enter the project manager's QA queue before release to the engineer or client.",
+      copy: "Submitted records enter a controlled QA workflow before being released to the engineer or client.",
       items: [
         "QA review and checks",
-        "Evidence verification",
-        "Test review",
+        "Evidence and test verification",
         "Controlled release",
       ],
-      outcome: "The client sees a confirmed record, not unchecked raw submissions.",
+      outcome: "The client receives a confirmed record, not unchecked raw submissions.",
       image: {
         src: "photo-confirm-engineer.webp",
         alt: "Engineer at a desk reviewing a passed TacEdge anchor test report on a desktop monitor",
       },
     },
   ],
+  assurance: {
+    lead: "Built for the realities of ground engineering.",
+    copy: "Offline-capable, role-specific and designed to keep the evidence chain intact from start to finish.",
+  },
 };
 
 export const record = {

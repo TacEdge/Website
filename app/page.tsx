@@ -251,15 +251,16 @@ export default function Home() {
       <section className="section section--tint" id="workflow">
         <div className="container">
           <div className="workflow-head">
+            <span className="eyebrow eyebrow--forest">{workflow.eyebrow}</span>
             <h2 className="heading-lg">{workflow.header}</h2>
             <p className="sub" style={{ marginInline: "auto" }}>
               {workflow.subheader}
             </p>
           </div>
 
-          <div className="phases">
+          <ol className="phases">
             {workflow.phases.map((phase, i) => (
-              <div className="phase-track" key={phase.key}>
+              <li className="phase-track" key={phase.key}>
                 <article className={`phase phase--${phase.key}`}>
                   <div className="phase__head">
                     <span className="phase__num" aria-hidden="true">
@@ -309,9 +310,9 @@ export default function Home() {
                     <PhaseArrow />
                   </div>
                 )}
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
 
           {/* One connected record */}
           <aside className="record-strip card" aria-label="One connected record">
@@ -335,6 +336,28 @@ export default function Home() {
               </ol>
             </div>
           </aside>
+
+          {/* Assurance strip */}
+          <div className="assure">
+            <span className="assure__icon" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 3.2 19 5.8v5.3c0 4.3-2.9 7.7-7 9.6-4.1-1.9-7-5.3-7-9.6V5.8z" />
+                <path d="m8.8 11.8 2.1 2.1 4.3-4.6" />
+              </svg>
+            </span>
+            <p className="assure__text">
+              <b>{workflow.assurance.lead}</b> {workflow.assurance.copy}
+            </p>
+          </div>
         </div>
       </section>
 
