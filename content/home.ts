@@ -2,23 +2,14 @@
 // revision). Edit only against an approved copy revision.
 
 export const hero = {
-  // Three intentional lines on wide desktop; wraps naturally on mobile.
-  headlineLines: ["Shared operational", "clarity for ground", "engineering."],
+  // The brand promise: two intentional lines on wide desktop.
+  headlineLines: ["Shared", "Clarity."],
+  category: "The field platform for ground-engineering delivery.",
   subhead:
     "Set the project up once, capture the work where it happens, and produce a confirmed record your engineer can trust.",
   tagline: "No chasing. No re-keying. No closeout reconstruction.",
   ctaPrimary: "Arrange a demonstration",
   ctaSecondary: "See the workflow",
-};
-
-export const proofStrip = {
-  label: "Running now, on real work.",
-  points: [
-    "In production on drilling and anchoring projects",
-    "Operating across sites in New Zealand and Samoa",
-    "Developed with ground engineering contractors",
-    "Used from field capture through to engineering closeout",
-  ],
 };
 
 export const problem = {

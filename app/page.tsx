@@ -5,7 +5,6 @@ import { cta } from "@/content/site";
 import { basePath } from "@/lib/base-path";
 import {
   hero,
-  proofStrip,
   problem,
   workflow,
   record,
@@ -148,11 +147,25 @@ export default function Home() {
                 </span>
               ))}
             </h1>
+            <p className="hero__category">{hero.category}</p>
             <p className="sub">{hero.subhead}</p>
             <p className="hero__tagline">{hero.tagline}</p>
             <div className="hero__actions">
               <Link href={cta.href} className="btn btn--primary-inverse">
                 {hero.ctaPrimary}
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
+                </svg>
               </Link>
               <a href="#workflow" className="btn btn--outline-inverse">
                 {hero.ctaSecondary}
@@ -202,34 +215,6 @@ export default function Home() {
               />
             </div>
           </figure>
-        </div>
-      </section>
-
-      {/* Production proof strip */}
-      <section className="proof-strip" aria-label="In production">
-        <div className="container">
-          <span className="proof-strip__label">{proofStrip.label}</span>
-          <ul className="proof-strip__points">
-            {proofStrip.points.map((p) => (
-              <li key={p}>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <circle cx="10" cy="10" r="8.2" />
-                  <path d="m6.4 10.3 2.4 2.4 4.8-5.2" />
-                </svg>
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

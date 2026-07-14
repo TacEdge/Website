@@ -555,24 +555,33 @@ button { font: inherit; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
-  gap: 36px;
+  grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+  gap: 40px;
   align-items: center;
-  min-height: min(calc(100svh - 220px), 680px);
+  min-height: min(calc(100svh - 200px), 700px);
 }
+/* The brand promise: a large two-line statement */
 .hero__headline {
-  font-size: clamp(34px, 3.2vw, 46px);
+  font-size: clamp(52px, 6.3vw, 92px);
   color: var(--cream);
-  line-height: 1.12;
+  line-height: 1.05;
+  letter-spacing: 0.005em;
 }
-/* Three intentional headline lines on wide screens; natural wrap below */
 @media (min-width: 1081px) {
   .hero__line { display: block; white-space: nowrap; }
+}
+/* Category descriptor beneath the promise */
+.hero__category {
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--sage);
 }
 .hero__tagline {
   margin-top: 16px;
   font-weight: 600;
-  font-size: var(--fs-lg);
+  font-size: 17px;
   color: var(--cream);
 }
 .hero__actions {
@@ -581,7 +590,7 @@ button { font: inherit; }
   flex-wrap: wrap;
   gap: 12px;
 }
-.hero__actions .btn { padding-inline: 18px; }
+.hero__actions .btn { padding-inline: 16px; font-size: var(--fs-base); }
 
 /* Two-screen composition: QA Queue (Confirm) at the back, mobile field
    capture (Capture) in the foreground overlapping its record list. */
@@ -620,49 +629,6 @@ button { font: inherit; }
     margin-top: 16px;
   }
   .hero__actions .btn { flex: 1 1 100%; }
-}
-
-/* ============================================================
-   Production proof strip
-   ============================================================ */
-
-.proof-strip {
-  background: var(--sage-tint);
-  border-block: 1px solid var(--rule);
-  padding-block: 26px;
-}
-.proof-strip__label {
-  display: block;
-  font-family: var(--mono);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--forest);
-  margin-bottom: 16px;
-}
-.proof-strip__points {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px 28px;
-}
-.proof-strip__points li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: var(--fs-base);
-  line-height: 1.45;
-  color: var(--ink-60);
-}
-.proof-strip__points svg { color: var(--forest-2); flex-shrink: 0; margin-top: 2px; }
-@media (max-width: 1024px) {
-  .proof-strip__points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 560px) {
-  .proof-strip__points { grid-template-columns: 1fr; gap: 10px; }
 }
 
 /* ============================================================
