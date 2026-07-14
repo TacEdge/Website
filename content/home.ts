@@ -113,17 +113,22 @@ export const record = {
 
 export const workTypes = {
   eyebrow: "Work types",
-  header: "Configured for ground engineering work.",
+  header: "One workflow. Configured to the work.",
   support:
-    "One workflow, adapted to the information, evidence and quality requirements of each work type.",
-  types: [
-    "Anchoring",
-    "Drilling",
-    "Shotcrete",
-    "Rockfall Protection",
-    "Drainage",
-    "Piling & Retaining",
+    "TACEDGE is being proven on anchoring and drilling projects, with the same connected record adaptable to adjacent ground-engineering workflows.",
+  focusLabel: "Current focus",
+  focus: [
+    {
+      name: "Anchoring",
+      copy: "Hole drilling, bolt installation, grouting and proof testing.",
+    },
+    {
+      name: "Drilling",
+      copy: "Drill progress, depth tracking and lithology logging.",
+    },
   ],
+  adjacentLabel: "Adaptable to adjacent workflows",
+  adjacent: ["Shotcrete", "Rockfall Protection", "Drainage", "Piling & Retaining"],
 };
 
 export const origin = {

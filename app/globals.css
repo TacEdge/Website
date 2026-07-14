@@ -976,31 +976,90 @@ button { font: inherit; }
    Work types
    ============================================================ */
 
-.worktypes {
+.worktypes-label {
+  display: block;
+  margin: 44px 0 16px;
+}
+.worktypes-label + .worktypes-label { margin-top: 0; }
+
+/* Current focus: two wide cards with descriptions */
+.worktypes-focus {
   list-style: none;
-  margin: 48px 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.worktype-focus {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px;
+}
+.worktype-focus .worktype__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--forest-2);
+}
+.worktype-focus__text { flex: 1; min-width: 0; }
+.worktype-focus__text h3 { font-size: var(--fs-lg); color: var(--ink); }
+.worktype-focus__text p {
+  margin-top: 6px;
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--ink-60);
+  max-width: 34ch;
+}
+.worktype__arrow {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-pill);
+  background: var(--sage-tint);
+  color: var(--forest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjacent workflows: four compact cards */
+.worktypes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
 }
 .worktype {
-  padding: 24px 12px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
-  font-size: var(--fs-base);
-  font-weight: 600;
+  gap: 18px;
+}
+.worktype__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.worktype__head .worktype__arrow { width: 30px; height: 30px; }
+.worktype__icon { color: var(--forest-2); }
+.worktype__name {
+  font-size: var(--fs-md);
+  font-weight: 700;
   color: var(--ink);
 }
-.worktype__icon { color: var(--forest-2); }
+
 @media (max-width: 980px) {
-  .worktypes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 560px) {
   .worktypes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .worktypes-focus { grid-template-columns: 1fr; gap: 14px; }
+}
+@media (max-width: 420px) {
+  .worktypes { grid-template-columns: 1fr; gap: 14px; }
 }
 
 /* ============================================================

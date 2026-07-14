@@ -393,11 +393,60 @@ export default function Home() {
           <span className="eyebrow">{workTypes.eyebrow}</span>
           <h2 className="heading-lg">{workTypes.header}</h2>
           <p className="sub">{workTypes.support}</p>
+
+          <span className="worktypes-label eyebrow eyebrow--forest">
+            {workTypes.focusLabel}
+          </span>
+          <ul className="worktypes-focus">
+            {workTypes.focus.map((t) => (
+              <li className="card worktype-focus" key={t.name}>
+                <WorkTypeIcon type={t.name} />
+                <div className="worktype-focus__text">
+                  <h3>{t.name}</h3>
+                  <p>{t.copy}</p>
+                </div>
+                <span className="worktype__arrow" aria-hidden="true">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
+                  </svg>
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <span className="worktypes-label eyebrow eyebrow--forest">
+            {workTypes.adjacentLabel}
+          </span>
           <ul className="worktypes">
-            {workTypes.types.map((t) => (
+            {workTypes.adjacent.map((t) => (
               <li className="card worktype" key={t}>
-                <WorkTypeIcon type={t} />
-                <span>{t}</span>
+                <span className="worktype__head">
+                  <WorkTypeIcon type={t} />
+                  <span className="worktype__arrow" aria-hidden="true">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
+                    </svg>
+                  </span>
+                </span>
+                <span className="worktype__name">{t}</span>
               </li>
             ))}
           </ul>
