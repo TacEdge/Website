@@ -101,35 +101,6 @@ export const record = {
   stages: ["Configured", "Captured", "Confirmed", "Released"],
 };
 
-export const principles = {
-  cards: [
-    {
-      key: "field",
-      title: "Built for the field",
-      header: "If the crew will not use it, nothing else matters.",
-      copy: "Large tap targets, clear labels and task-specific capture for the person closest to the work.",
-    },
-    {
-      key: "offline",
-      title: "Works offline",
-      header: "The signal drops. The work does not.",
-      copy: "Capture a full shift on device. Sync when the connection returns.",
-    },
-    {
-      key: "engineers",
-      title: "Trusted by engineers",
-      header: "Confirmed before it reaches the engineer.",
-      copy: "Engineers receive a controlled view of verified work, evidence and release history.",
-    },
-    {
-      key: "configured",
-      title: "Configured for the work",
-      header: "One workflow. Multiple work types.",
-      copy: "TacEdge adapts to anchoring, drilling, shotcrete, rockfall protection, drainage, and piling / retaining.",
-    },
-  ],
-};
-
 export const workTypes = {
   eyebrow: "Work types",
   header: "Configured for ground engineering work.",

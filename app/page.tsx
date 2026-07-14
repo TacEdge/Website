@@ -9,7 +9,6 @@ import {
   problem,
   workflow,
   record,
-  principles,
   workTypes,
   origin,
   closing,
@@ -245,23 +244,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core product principles */}
-      <section className="section">
-        <div className="container">
-          <div className="principles">
-            {principles.cards.map((card) => (
-              <article className="card principle" key={card.key}>
-                <span className="eyebrow eyebrow--forest">{card.title}</span>
-                <h3 className="heading-sm">{card.header}</h3>
-                <p className="principle__copy">{card.copy}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Work types */}
-      <section className="section section--tint">
+      <section className="section">
         <div className="container">
           <span className="eyebrow">{workTypes.eyebrow}</span>
           <h2 className="heading-lg">{workTypes.header}</h2>
