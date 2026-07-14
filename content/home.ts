@@ -97,17 +97,18 @@ export const workflow = {
       },
     },
   ],
-  assurance: {
-    lead: "Built for the realities of ground engineering.",
-    copy: "Offline-capable, role-specific and designed to keep the evidence chain intact from start to finish.",
-  },
 };
 
+// Concluding panel beneath the workflow cards. Release stays an action
+// within Confirm; it is never a fourth stage.
 export const record = {
   header: "One work item. One connected record.",
-  body: "One planned item carries its setup, field capture, QA state and release history through the job.",
-  itemId: "Anchor B01",
-  stages: ["Configured", "Captured", "Confirmed", "Released"],
+  body: "Its setup, field evidence, QA status and release history remain connected from the workface through to closeout.",
+  stages: [
+    { key: "configured", label: "Configured" },
+    { key: "captured", label: "Captured" },
+    { key: "confirmed", label: "Confirmed" },
+  ],
 };
 
 export const workTypes = {

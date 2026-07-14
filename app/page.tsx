@@ -69,6 +69,51 @@ function ProcessIcon({ type }: { type: string }) {
   );
 }
 
+/* Stage icons for the connected-record panel. Decorative: the labels
+   carry the meaning. */
+const RECORD_STAGE_ICONS: Record<string, React.ReactNode> = {
+  // Settings cog
+  configured: (
+    <>
+      <circle cx="12" cy="12" r="3.1" />
+      <path d="M12 3.6v2.2M12 18.2v2.2M20.4 12h-2.2M5.8 12H3.6M17.9 6.1l-1.5 1.5M7.6 16.4l-1.5 1.5M17.9 17.9l-1.5-1.5M7.6 7.6 6.1 6.1" />
+    </>
+  ),
+  // Camera / evidence
+  captured: (
+    <>
+      <path d="M4 8.2h3.2l1.6-2.4h6.4l1.6 2.4H20v11H4z" />
+      <circle cx="12" cy="13.4" r="3.2" />
+    </>
+  ),
+  // Shield with check
+  confirmed: (
+    <>
+      <path d="M12 3.2 19 5.8v5.3c0 4.3-2.9 7.7-7 9.6-4.1-1.9-7-5.3-7-9.6V5.8z" />
+      <path d="m8.8 11.8 2.1 2.1 4.3-4.6" />
+    </>
+  ),
+};
+
+function RecordStageIcon({ type }: { type: string }) {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      {RECORD_STAGE_ICONS[type]}
+    </svg>
+  );
+}
+
 function PhaseArrow({ className }: { className?: string }) {
   return (
     <svg
@@ -314,50 +359,26 @@ export default function Home() {
             ))}
           </ol>
 
-          {/* One connected record */}
-          <aside className="record-strip card" aria-label="One connected record">
-            <div className="record-strip__intro">
-              <h3 className="heading-sm">{record.header}</h3>
-              <p>{record.body}</p>
+          {/* One connected record — the conclusion of the workflow */}
+          <aside className="record-panel" aria-label="One connected record">
+            <div className="record-panel__intro">
+              <h3 className="record-panel__headline">{record.header}</h3>
+              <p className="record-panel__copy">{record.body}</p>
             </div>
-            <div className="record-strip__flow">
-              <span className="record-strip__id">{record.itemId}</span>
-              <ol className="record-strip__stages">
-                {record.stages.map((stage, i) => (
-                  <li key={stage}>
-                    <span className={`record-stage record-stage--${i}`}>
-                      <b>{stage}</b>
-                    </span>
-                    {i < record.stages.length - 1 && (
-                      <PhaseArrow className="record-strip__arrow" />
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </div>
+            <ol className="record-panel__stages">
+              {record.stages.map((stage, i) => (
+                <li key={stage.key}>
+                  <span className={`record-stage record-stage--${stage.key}`}>
+                    <RecordStageIcon type={stage.key} />
+                    <b>{stage.label}</b>
+                  </span>
+                  {i < record.stages.length - 1 && (
+                    <PhaseArrow className="record-panel__arrow" />
+                  )}
+                </li>
+              ))}
+            </ol>
           </aside>
-
-          {/* Assurance strip */}
-          <div className="assure">
-            <span className="assure__icon" aria-hidden="true">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 3.2 19 5.8v5.3c0 4.3-2.9 7.7-7 9.6-4.1-1.9-7-5.3-7-9.6V5.8z" />
-                <path d="m8.8 11.8 2.1 2.1 4.3-4.6" />
-              </svg>
-            </span>
-            <p className="assure__text">
-              <b>{workflow.assurance.lead}</b> {workflow.assurance.copy}
-            </p>
-          </div>
         </div>
       </section>
 
