@@ -66,8 +66,8 @@ export const problem = {
 
 export const workflow = {
   eyebrow: "The workflow",
-  header: "Configure. Capture. Confirm.",
-  subheader: "One connected workflow from project setup to a confirmed record.",
+  header: "Configure. Capture. Confirm. Compound.",
+  subheader: "One connected workflow from project setup to a smarter next project.",
   phases: [
     {
       key: "configure",
@@ -108,18 +108,36 @@ export const workflow = {
         alt: "Engineer at a desk reviewing a passed TACEDGE anchor test report on a desktop monitor",
       },
     },
+    {
+      key: "compound",
+      title: "Compound",
+      descriptor: "Start the next project smarter.",
+      role: "Project Manager",
+      copy: "Confirmed records improve future project layouts, checks and recommendations.",
+      items: [
+        "Lessons automatically carried forward",
+        "Risks and evidence requirements surfaced earlier",
+        "Templates continuously refined",
+      ],
+      outcome: "Every confirmed record improves what comes next.",
+      image: {
+        src: "tacedge-compound-recommendations.webp",
+        alt: "TACEDGE recommending a configuration for the next project from confirmed records, with proposed anchor layout, testing and evidence changes ready to review and apply",
+      },
+    },
   ],
 };
 
 // Concluding panel beneath the workflow cards. Release stays an action
-// within Confirm; it is never a fourth stage.
+// within Confirm; Compound closes the loop back into configuration.
 export const record = {
   header: "One work item. One connected record.",
-  body: "Setup, capture, QA and release stay connected from field to closeout.",
+  body: "Setup, capture, QA, release and learning stay connected from field to closeout.",
   stages: [
     { key: "configured", label: "Configured" },
     { key: "captured", label: "Captured" },
     { key: "confirmed", label: "Confirmed" },
+    { key: "compounded", label: "Compounded" },
   ],
 };
 

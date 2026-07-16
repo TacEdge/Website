@@ -878,15 +878,17 @@ button { font: inherit; }
    Workflow — Configure. Capture. Confirm.
    ============================================================ */
 
-.workflow-head { text-align: center; max-width: 780px; margin-inline: auto; }
+.workflow-head { text-align: center; max-width: 1020px; margin-inline: auto; }
+.workflow-head .sub { max-width: 62ch; }
 
 .phases {
   list-style: none;
   padding: 0;
   margin: 56px 0 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 16px;
+  grid-template-columns:
+    minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 12px;
   align-items: stretch;
 }
 .phase-track { display: contents; }
@@ -910,7 +912,7 @@ button { font: inherit; }
 
 .phase__head { display: flex; gap: 14px; align-items: flex-start; }
 /* Equalise header height so role pills and images align across cards */
-@media (min-width: 981px) {
+@media (min-width: 721px) {
   .phase__head { min-height: 74px; }
 }
 .phase__num {
@@ -940,8 +942,14 @@ button { font: inherit; }
   color: var(--ink-60);
   margin-top: 4px;
 }
+/* At four-across width the Confirm role wraps to two lines; reserve the
+   same slot on every card so the photos stay aligned. */
+@media (min-width: 1181px) {
+  .phase__role-slot { min-height: 46px; }
+}
 .phase__role {
   align-self: flex-start;
+  display: inline-block;
   padding: 4px 12px;
   border-radius: var(--r-pill);
   background: var(--sage-tint);
@@ -966,6 +974,10 @@ button { font: inherit; }
   aspect-ratio: 8 / 5;
   object-fit: cover;
 }
+/* The Compound screen is a product mock, not a photograph: contain it
+   on a white ground instead of cropping the interface. */
+.phase--compound .phase__photo { background: var(--card); }
+.phase--compound .phase__photo img { object-fit: contain; }
 
 .phase__items {
   list-style: none;
@@ -976,12 +988,13 @@ button { font: inherit; }
 }
 .phase__items li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: var(--fs-base);
   color: var(--ink-60);
+  line-height: 1.5;
 }
-.phase__items svg { color: var(--olive); flex-shrink: 0; }
+.phase__items svg { color: var(--olive); flex-shrink: 0; margin-top: 3px; }
 
 .phase__outcome {
   margin-top: auto;
@@ -993,7 +1006,13 @@ button { font: inherit; }
   line-height: 1.55;
 }
 
-@media (max-width: 980px) {
+/* Tablet: two-by-two grid, stage order preserved, arrows rested */
+@media (max-width: 1180px) and (min-width: 721px) {
+  .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .phase-handoff { display: none; }
+}
+/* Mobile: stack in order with subtle downward connectors */
+@media (max-width: 720px) {
   .phases { grid-template-columns: 1fr; gap: 8px; }
   .phase-handoff { justify-content: center; padding-block: 8px; }
   .phase-handoff svg { transform: rotate(90deg); }
@@ -1008,8 +1027,8 @@ button { font: inherit; }
   margin-top: 28px;
   padding: 24px 28px;
   display: grid;
-  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
-  gap: 24px 40px;
+  grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+  gap: 24px 36px;
   align-items: center;
   background: var(--sage-tint);
   border: 1px solid var(--olive-line);
@@ -1034,10 +1053,34 @@ button { font: inherit; }
 .record-panel__stages {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 15px;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+}
+/* Quiet return loop: learning from Compounded feeds the next Configure */
+.record-panel__stages::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 8%;
+  bottom: 0;
+  height: 9px;
+  border: 1px dashed var(--sage);
+  border-top: 0;
+  border-radius: 0 0 7px 7px;
+}
+.record-panel__stages::before {
+  content: "";
+  position: absolute;
+  left: calc(9% - 3px);
+  bottom: 7px;
+  width: 6px;
+  height: 6px;
+  border-left: 1.5px solid var(--sage);
+  border-top: 1.5px solid var(--sage);
+  transform: rotate(45deg);
 }
 .record-panel__stages li {
   display: flex;
@@ -1051,9 +1094,9 @@ button { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 8px;
   border-radius: var(--r-md);
-  padding: 12px 16px;
+  padding: 11px 12px;
   border: 1px solid var(--olive-edge);
   background: var(--card);
   color: var(--forest);
@@ -1061,20 +1104,21 @@ button { font: inherit; }
   min-width: 0;
 }
 .record-stage svg { flex-shrink: 0; }
-.record-stage b { font-size: var(--fs-md); font-weight: 700; white-space: nowrap; }
-.record-stage--confirmed {
+.record-stage b { font-size: var(--fs-base); font-weight: 700; white-space: nowrap; }
+.record-stage--compounded {
   background: var(--forest);
   border-color: var(--forest);
   color: var(--cream);
 }
-.record-stage--confirmed svg { color: var(--sage-tint); }
+.record-stage--compounded svg { color: var(--sage-tint); }
 
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
   .record-panel { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .record-panel__stages { flex-direction: column; align-items: stretch; gap: 6px; }
-  .record-panel__stages li { flex-direction: column; align-items: stretch; gap: 6px; }
+  .record-panel__stages { flex-direction: column; align-items: stretch; gap: 6px; padding-bottom: 0; }
+  .record-panel__stages::before,
+  .record-panel__stages::after { display: none; }
   .record-panel__arrow { transform: rotate(90deg); align-self: center; }
   .record-stage { justify-content: flex-start; }
 }

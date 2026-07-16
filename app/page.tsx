@@ -169,6 +169,13 @@ const RECORD_STAGE_ICONS: Record<string, React.ReactNode> = {
       <path d="m8.8 11.8 2.1 2.1 4.3-4.6" />
     </>
   ),
+  // Circular refinement loop
+  compounded: (
+    <>
+      <path d="M19.3 12a7.3 7.3 0 1 1-2.1-5.1" />
+      <path d="M19.6 3.9v3.3h-3.3" />
+    </>
+  ),
 };
 
 function RecordStageIcon({ type }: { type: string }) {
@@ -395,7 +402,9 @@ export default function Home() {
                       <p className="phase__descriptor">{phase.descriptor}</p>
                     </div>
                   </div>
-                  <span className="phase__role">Role: {phase.role}</span>
+                  <div className="phase__role-slot">
+                    <span className="phase__role">Role: {phase.role}</span>
+                  </div>
                   <div className="phase__photo">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
