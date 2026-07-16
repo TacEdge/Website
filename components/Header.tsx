@@ -23,8 +23,8 @@ export default function Header() {
           <img
             src={`${basePath}/brand/tacedge-lockup-cream.svg`}
             alt="TACEDGE"
-            width={182}
-            height={36}
+            width={187}
+            height={37}
           />
         </Link>
         <nav className="site-nav" aria-label="Main">

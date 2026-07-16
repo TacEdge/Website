@@ -265,7 +265,6 @@ export default function Home() {
             </h1>
             <p className="hero__category">{hero.category}</p>
             <p className="sub">{hero.subhead}</p>
-            <p className="hero__tagline">{hero.tagline}</p>
             <div className="hero__actions">
               <Link href={cta.href} className="btn btn--primary-inverse">
                 {hero.ctaPrimary}

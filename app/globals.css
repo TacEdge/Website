@@ -320,7 +320,7 @@ button { font: inherit; }
   z-index: 1;
 }
 .site-header__logo { display: inline-flex; align-items: center; }
-.site-header__logo img { height: 30px; width: auto; display: block; }
+.site-header__logo img { height: 37px; width: auto; display: block; }
 
 .site-nav {
   display: flex;
@@ -609,12 +609,6 @@ button { font: inherit; }
   font-size: 17px;
   line-height: 1.5;
   color: var(--sage);
-}
-.hero__tagline {
-  margin-top: 16px;
-  font-weight: 600;
-  font-size: 17px;
-  color: var(--cream);
 }
 .hero__actions {
   margin-top: 36px;

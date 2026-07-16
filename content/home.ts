@@ -6,8 +6,7 @@ export const hero = {
   headlineLines: ["Shared", "Clarity."],
   category: "For ground-engineering delivery.",
   subhead:
-    "Set the project up once. Capture the work where it happens. Give your engineer a confirmed report they can trust.",
-  tagline: "No chasing. No re-keying. No rebuilding the report.",
+    "One connected workflow from project setup to a smarter next project.",
   ctaPrimary: "Arrange a demonstration",
   ctaSecondary: "See the workflow",
 };
