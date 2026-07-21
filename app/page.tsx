@@ -172,8 +172,8 @@ const RECORD_STAGE_ICONS: Record<string, React.ReactNode> = {
   // Circular refinement loop
   compounded: (
     <>
-      <path d="M19.3 12a7.3 7.3 0 1 1-2.1-5.1" />
-      <path d="M19.6 3.9v3.3h-3.3" />
+      <path d="M21.4 4.8v5h-5" />
+      <path d="M19.8 14.6a8 8 0 1 1-1.9-8.4L21.4 9.8" />
     </>
   ),
 };
