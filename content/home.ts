@@ -175,7 +175,7 @@ export const origin = {
     "What was missing was one shared system to configure the plan, capture field activity as it happened, and confirm a trusted record.",
   missionLabel: "Mission",
   mission: "To bring shared clarity to the tactical edge.",
-  builtLabel: "That’s why we built TACEDGE",
+  builtLabel: "TACEDGE was built",
   // Same stages, same icons as the connected-record strip above.
   built: [
     { key: "configured", label: "Configure the plan." },
