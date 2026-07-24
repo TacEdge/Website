@@ -514,6 +514,14 @@ export default function Home() {
       <section className="section--tight">
         <div className="container">
           <div className="cta-panel">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="cta-panel__photo"
+              src={product("photo-capture-abseil.webp")}
+              alt=""
+              loading="lazy"
+              aria-hidden="true"
+            />
             <ContourMotif />
             <h2 className="heading-lg">{closing.header}</h2>
             <p className="sub" style={{ marginInline: "auto" }}>

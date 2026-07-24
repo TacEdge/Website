@@ -1153,10 +1153,36 @@ button { font: inherit; }
   padding: clamp(44px, 5.5vw, 68px) 24px;
   text-align: center;
 }
-.cta-panel > *:not(.contour) { position: relative; z-index: 1; }
+.cta-panel > *:not(.contour):not(.cta-panel__photo) { position: relative; z-index: 1; }
 .cta-panel .contour { position: absolute; z-index: 0; }
 /* Light variant of the topographic motif */
 .cta-panel .contour path { stroke: var(--forest); opacity: 0.07; }
+/* Faint full-width field photo behind the panel's content */
+.cta-panel__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  opacity: 0.12;
+  z-index: 0;
+}
+/* Soft cream wash over the photo so the centred copy stays legible */
+.cta-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 62% 85% at 50% 46%,
+    rgba(247, 245, 236, 0.85) 0%,
+    rgba(247, 245, 236, 0.35) 55%,
+    rgba(247, 245, 236, 0) 100%
+  );
+  /* Above the photo and contour, below the panel content (later in tree). */
+  z-index: 1;
+  pointer-events: none;
+}
 .cta-panel__support {
   margin-top: 14px;
   font-weight: 600;
