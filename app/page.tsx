@@ -432,76 +432,81 @@ export default function Home() {
       {/* Origin */}
       <section className="section--dark">
         <ContourMotif />
-        <div className="container section--tight origin">
-          <div className="origin__copy">
-            <span className="eyebrow">{origin.eyebrow}</span>
-            <h2 className="heading-lg origin__heading">
-              {origin.headerLines.map((line) => (
-                <span className="origin__hline" key={line}>
-                  {line}{" "}
-                </span>
-              ))}
-            </h2>
-            <div className="prose prose--dark" style={{ marginTop: 24 }}>
-              {origin.body.map((p) => (
-                <p key={p.slice(0, 24)}>{p}</p>
-              ))}
+        <div className="container section--tight">
+          <span className="eyebrow">{origin.eyebrow}</span>
+          <div className="origin">
+            <div className="origin__copy">
+              <h2 className="heading-lg origin__heading">
+                {origin.headerLines.map((line) => (
+                  <span className="origin__hline" key={line}>
+                    {line}{" "}
+                  </span>
+                ))}
+              </h2>
+              <div className="prose prose--dark" style={{ marginTop: 24 }}>
+                {origin.body.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
+              </div>
+              <p className="origin__missing">{origin.missing}</p>
             </div>
-            <p className="origin__missing">{origin.missing}</p>
-            <hr className="origin__rule" aria-hidden="true" />
-            <span className="eyebrow origin__mission-label">
-              {origin.missionLabel}
-            </span>
-            <div className="origin__mission">
-              <span className="origin__mission-icon" aria-hidden="true">
+            <figure className="origin__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={product(origin.image.src)}
+                alt={origin.image.alt}
+                loading="lazy"
+                width={960}
+                height={623}
+              />
+              <figcaption>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${basePath}/brand/tacedge-brandmark-sage.svg`}
                   alt=""
-                  width={24}
-                  height={22}
+                  width={16}
+                  height={15}
                 />
-              </span>
-              <b>{origin.mission}</b>
-            </div>
-          </div>
-          <figure className="origin__media">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={product(origin.image.src)}
-              alt={origin.image.alt}
-              loading="lazy"
-              width={960}
-              height={623}
-            />
-            <figcaption>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${basePath}/brand/tacedge-brandmark-sage.svg`}
-                alt=""
-                width={16}
-                height={15}
-              />
-              {origin.image.caption}
-            </figcaption>
-          </figure>
+                {origin.image.caption}
+              </figcaption>
+            </figure>
 
-          {/* That's why we built TACEDGE */}
-          <div className="origin-built">
-            <span className="origin-built__label">{origin.builtLabel}</span>
-            <ol className="origin-built__row">
-              {origin.built.map((item, i) => (
-                <li key={item.key}>
-                  <span className="origin-built__icon" aria-hidden="true">
-                    <RecordStageIcon type={item.key} size={24} />
-                  </span>
-                  <span className="origin-built__text">{item.label}</span>
-                  {i < origin.built.length - 1 && (
-                    <Arrow className="origin-built__arrow" size={22} />
-                  )}
-                </li>
-              ))}
-            </ol>
+            {/* That's why we built TACEDGE */}
+            <div className="origin-built">
+              <span className="origin-built__label">{origin.builtLabel}</span>
+              <ol className="origin-built__row">
+                {origin.built.map((item, i) => (
+                  <li key={item.key}>
+                    <span className="origin-built__icon" aria-hidden="true">
+                      <RecordStageIcon type={item.key} size={24} />
+                    </span>
+                    <span className="origin-built__text">{item.label}</span>
+                    {i < origin.built.length - 1 && (
+                      <Arrow className="origin-built__arrow" size={22} />
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* The section finishes on the mission */}
+            <div className="origin__mission-block">
+              <span className="eyebrow origin__mission-label">
+                {origin.missionLabel}
+              </span>
+              <div className="origin__mission">
+                <span className="origin__mission-icon" aria-hidden="true">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${basePath}/brand/tacedge-brandmark-sage.svg`}
+                    alt=""
+                    width={24}
+                    height={22}
+                  />
+                </span>
+                <b>{origin.mission}</b>
+              </div>
+            </div>
           </div>
         </div>
       </section>
