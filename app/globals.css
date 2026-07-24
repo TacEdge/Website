@@ -901,14 +901,17 @@ button { font: inherit; }
 }
 
 .phase__head { display: flex; gap: 14px; align-items: center; }
-/* Bare stage glyph beside each card title — no container */
+/* Bare stage glyph beside each card title — no container. Negative margin
+   offsets the artwork's internal viewBox padding so the drawn icon sits
+   flush with the card's left text edge. */
 .phase__glyph {
   flex-shrink: 0;
-  width: 34px;
+  width: 30px;
   height: 40px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: -4px;
   color: var(--forest-2);
 }
 .phase__title { font-size: var(--t-card-title); }
