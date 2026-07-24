@@ -307,8 +307,12 @@ button { font: inherit; }
 
 .site-header {
   background: var(--forest);
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   overflow: hidden;
+  /* invisible over the forest hero, separates over light sections */
+  box-shadow: 0 2px 14px rgba(17, 36, 17, 0.18);
 }
 .site-header__inner {
   min-height: 64px;
@@ -350,6 +354,12 @@ button { font: inherit; }
   .site-header__inner { flex-wrap: wrap; padding-block: 10px; }
   .site-nav { flex-wrap: wrap; row-gap: 4px; }
   .site-nav a:not(.btn) { padding: 8px 10px; font-size: var(--fs-base); }
+}
+
+/* Keep anchored sections clear of the sticky header */
+#workflow { scroll-margin-top: 80px; }
+@media (max-width: 880px) {
+  #workflow { scroll-margin-top: 140px; }
 }
 
 /* ============================================================
