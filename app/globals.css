@@ -1240,7 +1240,6 @@ button { font: inherit; }
   font-size: var(--t-h3);
   line-height: 1.28;
   color: var(--cream);
-  max-width: 20ch;
 }
 
 /* Full-width row beneath both columns */
