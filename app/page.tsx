@@ -286,10 +286,10 @@ export default function Home() {
                 <span className="device-monitor__camera" aria-hidden="true" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={product("tacedge-qa-queue-desktop.webp")}
+                  src={product("tacedge-qa-queue-desktop-v2.webp")}
                   alt=""
                   width={1200}
-                  height={871}
+                  height={872}
                 />
               </div>
               <span className="device-monitor__neck" aria-hidden="true" />
