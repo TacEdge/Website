@@ -299,10 +299,10 @@ export default function Home() {
               <span className="device-phone__speaker" aria-hidden="true" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product("tacedge-field-capture-b12-v2.webp")}
+                src={product("tacedge-field-capture-b12-v3.webp")}
                 alt=""
                 width={720}
-                height={1577}
+                height={1549}
               />
             </div>
           </figure>
