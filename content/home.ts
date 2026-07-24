@@ -65,8 +65,7 @@ export const problem = {
 
 export const workflow = {
   eyebrow: "The workflow",
-  header: "Configure. Capture. Confirm. Compound.",
-  subheader: "One connected workflow from project setup to a smarter next project.",
+  header: "One connected workflow from project setup to a smarter next project.",
   phases: [
     {
       key: "configure",

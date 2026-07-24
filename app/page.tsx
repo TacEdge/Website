@@ -362,13 +362,8 @@ export default function Home() {
       {/* Configure. Capture. Confirm. */}
       <section className="section section--tint" id="workflow">
         <div className="container">
-          <div className="workflow-head">
-            <span className="eyebrow eyebrow--forest">{workflow.eyebrow}</span>
-            <h2 className="heading-lg">{workflow.header}</h2>
-            <p className="sub" style={{ marginInline: "auto" }}>
-              {workflow.subheader}
-            </p>
-          </div>
+          <span className="eyebrow eyebrow--forest">{workflow.eyebrow}</span>
+          <h2 className="heading-lg">{workflow.header}</h2>
 
           <ol className="phases">
             {workflow.phases.map((phase, i) => (

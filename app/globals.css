@@ -872,9 +872,6 @@ button { font: inherit; }
    Workflow — Configure. Capture. Confirm.
    ============================================================ */
 
-.workflow-head { text-align: center; max-width: 1020px; margin-inline: auto; }
-.workflow-head .sub { max-width: 62ch; }
-
 .phases {
   list-style: none;
   padding: 0;
