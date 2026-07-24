@@ -73,7 +73,6 @@ export const workflow = {
       descriptor: "Set the project up once.",
       role: "Project Manager",
       copy: "Define layout, sequence, testing and evidence before work reaches the field.",
-      items: ["Project layout", "Work plan", "Testing rules"],
       outcome: "Everyone starts from the same definition.",
       image: {
         src: "photo-configure-pm.webp",
@@ -86,7 +85,6 @@ export const workflow = {
       descriptor: "Record the work where it happens.",
       role: "Operator",
       copy: "Capture field activity in simple workflows with the project context already in place.",
-      items: ["Offline-first capture", "Simple crew controls", "Photos and exceptions"],
       outcome: "The operator records once. The PM sees it live.",
       image: {
         src: "photo-capture-abseil.webp",
@@ -99,7 +97,6 @@ export const workflow = {
       descriptor: "Verify and release.",
       role: "Project Manager / Engineer",
       copy: "Submitted records enter QA before release to the engineer or client.",
-      items: ["QA review", "Evidence verification", "Controlled release"],
       outcome: "The client receives a confirmed report.",
       image: {
         src: "photo-confirm-engineer.webp",
@@ -112,11 +109,6 @@ export const workflow = {
       descriptor: "Start the next project smarter.",
       role: "Project Manager",
       copy: "Confirmed records improve future project layouts, checks and recommendations.",
-      items: [
-        "Lessons automatically carried forward",
-        "Risks and evidence requirements surfaced earlier",
-        "Templates continuously refined",
-      ],
       outcome: "Every confirmed record improves what comes next.",
       image: {
         src: "tacedge-compound-recommendations.webp",

@@ -210,25 +210,6 @@ function Arrow({
   );
 }
 
-/* Checkmark for included-item lists and status chips */
-function CheckIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 20 20"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="m4 10.6 3.8 3.8L16 6" />
-    </svg>
-  );
-}
 
 export default function Home() {
   return (
@@ -392,14 +373,6 @@ export default function Home() {
                     />
                   </div>
                   <p className="phase__copy">{phase.copy}</p>
-                  <ul className="phase__items">
-                    {phase.items.map((item) => (
-                      <li key={item}>
-                        <CheckIcon />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
                   <p className="phase__outcome">{phase.outcome}</p>
                 </article>
                 {i < workflow.phases.length - 1 && (
