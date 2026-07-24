@@ -133,18 +133,19 @@ function ProcessIcon({ type }: { type: string }) {
 /* Stage icons for the connected-record panel. Decorative: the labels
    carry the meaning. */
 const RECORD_STAGE_ICONS: Record<string, React.ReactNode> = {
-  // Settings cog
+  // Plan grid
   configured: (
     <>
-      <circle cx="12" cy="12" r="3.1" />
-      <path d="M12 3.6v2.2M12 18.2v2.2M20.4 12h-2.2M5.8 12H3.6M17.9 6.1l-1.5 1.5M7.6 16.4l-1.5 1.5M17.9 17.9l-1.5-1.5M7.6 7.6 6.1 6.1" />
+      <rect x="5" y="5" width="14" height="14" rx="2" />
+      <path d="M12 5v14M5 12h14" />
     </>
   ),
-  // Camera / evidence
+  // Crosshair / capture target
   captured: (
     <>
-      <path d="M4 8.2h3.2l1.6-2.4h6.4l1.6 2.4H20v11H4z" />
-      <circle cx="12" cy="13.4" r="3.2" />
+      <circle cx="12" cy="12" r="5.6" />
+      <circle cx="12" cy="12" r="1.4" />
+      <path d="M12 3.8V6.4M12 17.6v2.6M3.8 12H6.4M17.6 12h2.6" />
     </>
   ),
   // Shield with check
