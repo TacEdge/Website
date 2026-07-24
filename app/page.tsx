@@ -448,7 +448,9 @@ export default function Home() {
           <ul className="worktypes-grid">
             {workTypes.types.map((t) => (
               <li className="card worktype-focus" key={t.name}>
-                <WorkTypeIcon type={t.name} />
+                <span className="worktype__chip" aria-hidden="true">
+                  <WorkTypeIcon type={t.name} />
+                </span>
                 <div className="worktype-focus__text">
                   <h3>{t.name}</h3>
                   <p>{t.copy}</p>

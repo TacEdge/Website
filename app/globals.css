@@ -1127,16 +1127,28 @@ button { font: inherit; }
   display: flex;
   align-items: center;
   gap: 22px;
-  padding: 28px;
+  padding: 26px 28px;
+  box-shadow: var(--shadow-md);
+}
+/* Sage chip behind each icon — the brandmark-tile shape carrying the
+   section's colour */
+.worktype__chip {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-md);
+  background: var(--sage-tint);
+  color: var(--forest-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .worktype-focus .worktype__icon {
-  flex-shrink: 0;
   width: 32px;
   height: 32px;
-  color: var(--forest-2);
 }
 .worktype-focus__text { flex: 1; min-width: 0; }
-.worktype-focus__text h3 { font-size: var(--fs-lg); color: var(--ink); }
+.worktype-focus__text h3 { font-size: var(--fs-lg); color: var(--forest); }
 .worktype-focus__text p {
   margin-top: 6px;
   font-size: var(--t-card-body);
