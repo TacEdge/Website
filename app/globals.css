@@ -1229,10 +1229,6 @@ button { font: inherit; }
 }
 .origin__mission-icon {
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--sage-line);
   color: var(--sage);
   display: inline-flex;
   align-items: center;
@@ -1288,10 +1284,6 @@ button { font: inherit; }
 }
 .origin-built__icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--sage-line);
   color: var(--sage);
   display: inline-flex;
   align-items: center;

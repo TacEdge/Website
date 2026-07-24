@@ -475,7 +475,7 @@ export default function Home() {
                 {origin.built.map((item, i) => (
                   <li key={item.key}>
                     <span className="origin-built__icon" aria-hidden="true">
-                      <RecordStageIcon type={item.key} size={24} />
+                      <RecordStageIcon type={item.key} size={30} />
                     </span>
                     <span className="origin-built__text">{item.label}</span>
                     {i < origin.built.length - 1 && (
@@ -497,8 +497,8 @@ export default function Home() {
                   <img
                     src={`${basePath}/brand/tacedge-brandmark-sage.svg`}
                     alt=""
-                    width={24}
-                    height={22}
+                    width={44}
+                    height={41}
                   />
                 </span>
                 <b>{origin.mission}</b>
