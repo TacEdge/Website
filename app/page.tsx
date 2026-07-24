@@ -353,13 +353,11 @@ export default function Home() {
                     <span className="phase__glyph" aria-hidden="true">
                       <RecordStageIcon type={record.stages[i].key} size={30} />
                     </span>
-                    <div>
-                      <h3 className="phase__title">{phase.title}</h3>
-                      <p className="phase__descriptor">{phase.descriptor}</p>
-                    </div>
+                    <h3 className="phase__title">{phase.title}</h3>
                   </div>
+                  <p className="phase__descriptor">{phase.descriptor}</p>
                   <div className="phase__role-slot">
-                    <span className="phase__role">Role: {phase.role}</span>
+                    <span className="phase__role">{phase.role}</span>
                   </div>
                   <div className="phase__photo">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -900,11 +900,7 @@ button { font: inherit; }
   gap: 12px;
 }
 
-.phase__head { display: flex; gap: 14px; align-items: flex-start; }
-/* Equalise header height so role pills and images align across cards */
-@media (min-width: 721px) {
-  .phase__head { min-height: 74px; }
-}
+.phase__head { display: flex; gap: 14px; align-items: center; }
 /* Bare stage glyph beside each card title — no container */
 .phase__glyph {
   flex-shrink: 0;
@@ -922,7 +918,11 @@ button { font: inherit; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-60);
-  margin-top: 4px;
+  margin-top: -4px;
+}
+/* Equalise descriptor height so role pills and images align across cards */
+@media (min-width: 721px) {
+  .phase__descriptor { min-height: 3.2em; }
 }
 /* At four-across width the Confirm role wraps to two lines; reserve the
    same slot on every card so the photos stay aligned. */
