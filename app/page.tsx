@@ -98,10 +98,6 @@ const PROCESS_ICONS: Record<string, React.ReactNode> = {
       <path d="M12 7.2v9.6M14.6 9.4c-.6-.9-1.6-1.4-2.6-1.4-1.4 0-2.4.8-2.4 1.9s.9 1.6 2.4 1.9 2.6.8 2.6 2-1.1 2-2.6 2c-1 0-2-.5-2.6-1.4" />
     </>
   ),
-  // Mountain (mission mark)
-  mountain: (
-    <path d="m4.5 17 5-7.6 3.1 4.6 2.1-3.1 4.8 6.1z" />
-  ),
   // Shield with check
   record: (
     <>
@@ -488,7 +484,13 @@ export default function Home() {
             </span>
             <div className="origin__mission">
               <span className="origin__mission-icon" aria-hidden="true">
-                <ProcessIcon type="mountain" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${basePath}/brand/tacedge-brandmark-sage.svg`}
+                  alt=""
+                  width={24}
+                  height={22}
+                />
               </span>
               <b>{origin.mission}</b>
             </div>
@@ -503,7 +505,13 @@ export default function Home() {
               height={623}
             />
             <figcaption>
-              <ProcessIcon type="mountain" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${basePath}/brand/tacedge-brandmark-sage.svg`}
+                alt=""
+                width={16}
+                height={15}
+              />
               {origin.image.caption}
             </figcaption>
           </figure>

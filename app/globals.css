@@ -1316,7 +1316,7 @@ button { font: inherit; }
   font-size: var(--fs-base);
   color: var(--sage);
 }
-.origin__media figcaption svg { width: 17px; height: 17px; flex-shrink: 0; }
+.origin__media figcaption img { width: 16px; height: auto; flex-shrink: 0; }
 @media (max-width: 880px) {
   .origin { grid-template-columns: 1fr; gap: 40px; }
 }
