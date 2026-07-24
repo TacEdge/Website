@@ -102,21 +102,6 @@ const PROCESS_ICONS: Record<string, React.ReactNode> = {
   mountain: (
     <path d="m4.5 17 5-7.6 3.1 4.6 2.1-3.1 4.8 6.1z" />
   ),
-  // Plan grid
-  plan: (
-    <>
-      <rect x="5" y="5" width="14" height="14" rx="2" />
-      <path d="M12 5v14M5 12h14" />
-    </>
-  ),
-  // Crosshair / capture target
-  activity: (
-    <>
-      <circle cx="12" cy="12" r="5.6" />
-      <circle cx="12" cy="12" r="1.4" />
-      <path d="M12 3.8V6.4M12 17.6v2.6M3.8 12H6.4M17.6 12h2.6" />
-    </>
-  ),
   // Shield with check
   record: (
     <>
@@ -178,11 +163,11 @@ const RECORD_STAGE_ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-function RecordStageIcon({ type }: { type: string }) {
+function RecordStageIcon({ type, size = 18 }: { type: string; size?: number }) {
   return (
     <svg
-      width="18"
-      height="18"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -544,7 +529,7 @@ export default function Home() {
               {origin.built.map((item, i) => (
                 <li key={item.key}>
                   <span className="origin-built__icon" aria-hidden="true">
-                    <ProcessIcon type={item.key} />
+                    <RecordStageIcon type={item.key} size={24} />
                   </span>
                   <span className="origin-built__text">{item.label}</span>
                   {i < origin.built.length - 1 && (

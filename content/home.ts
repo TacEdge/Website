@@ -172,10 +172,12 @@ export const origin = {
   missionLabel: "Mission",
   mission: "To bring shared clarity to the tactical edge.",
   builtLabel: "That’s why we built TACEDGE",
+  // Same stages, same icons as the connected-record strip above.
   built: [
-    { key: "plan", label: "Configure the plan." },
-    { key: "activity", label: "Capture the activity." },
-    { key: "record", label: "Confirm the record." },
+    { key: "configured", label: "Configure the plan." },
+    { key: "captured", label: "Capture the activity." },
+    { key: "confirmed", label: "Confirm the record." },
+    { key: "compounded", label: "Compound the learning." },
   ],
   image: {
     src: "photo-whakaari-peaks.webp",
