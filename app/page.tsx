@@ -449,29 +449,14 @@ export default function Home() {
           <h2 className="heading-lg">{workTypes.header}</h2>
           <p className="sub">{workTypes.support}</p>
 
-          <span className="worktypes-label eyebrow eyebrow--forest">
-            {workTypes.focusLabel}
-          </span>
-          <ul className="worktypes-focus">
-            {workTypes.focus.map((t) => (
+          <ul className="worktypes-grid">
+            {workTypes.types.map((t) => (
               <li className="card worktype-focus" key={t.name}>
                 <WorkTypeIcon type={t.name} />
                 <div className="worktype-focus__text">
                   <h3>{t.name}</h3>
                   <p>{t.copy}</p>
                 </div>
-              </li>
-            ))}
-          </ul>
-
-          <span className="worktypes-label eyebrow eyebrow--forest">
-            {workTypes.adjacentLabel}
-          </span>
-          <ul className="worktypes">
-            {workTypes.adjacent.map((t) => (
-              <li className="card worktype" key={t}>
-                <WorkTypeIcon type={t} />
-                <span className="worktype__name">{t}</span>
               </li>
             ))}
           </ul>

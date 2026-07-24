@@ -144,8 +144,7 @@ export const workTypes = {
   header: "One workflow. Configured to the work.",
   support:
     "Built first for anchoring and drilling. Adaptable to adjacent ground-engineering work.",
-  focusLabel: "Current focus",
-  focus: [
+  types: [
     {
       name: "Anchoring",
       copy: "Hole drilling, bolt installation, grouting and proof testing.",
@@ -154,9 +153,23 @@ export const workTypes = {
       name: "Drilling",
       copy: "Drill progress, depth tracking and lithology logging.",
     },
+    {
+      name: "Shotcrete",
+      copy: "Spray records, thickness checks and test panels.",
+    },
+    {
+      name: "Rockfall Protection",
+      copy: "Mesh installation, anchor points and inspection records.",
+    },
+    {
+      name: "Drainage",
+      copy: "Drain installation, flow checks and as-built records.",
+    },
+    {
+      name: "Piling & Retaining",
+      copy: "Pile installation, depth verification and wall records.",
+    },
   ],
-  adjacentLabel: "Adaptable to adjacent workflows",
-  adjacent: ["Shotcrete", "Rockfall Protection", "Drainage", "Piling & Retaining"],
 };
 
 export const origin = {
