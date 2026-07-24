@@ -274,9 +274,10 @@ export default function Home() {
 
       {/* The problem */}
       <section className="section--tight">
-        <div className="container problem">
+        <div className="container">
+          <span className="eyebrow">{problem.eyebrow}</span>
+          <div className="problem">
           <div className="problem__main">
-            <span className="eyebrow">{problem.eyebrow}</span>
             <h2 className="heading-lg problem__heading">
               {problem.headerLines.map((line) => (
                 <span className="problem__hline" key={line}>
@@ -333,6 +334,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+          </div>
           </div>
         </div>
       </section>
