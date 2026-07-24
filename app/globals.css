@@ -1037,13 +1037,6 @@ button { font: inherit; }
   color: var(--forest);
   line-height: 1.45;
 }
-.record-panel__copy {
-  margin-top: 8px;
-  color: var(--ink-60);
-  font-size: var(--fs-md);
-  line-height: 1.6;
-  max-width: 46ch;
-}
 .record-panel__stages {
   list-style: none;
   margin: 0;

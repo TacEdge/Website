@@ -438,7 +438,6 @@ export default function Home() {
           <aside className="record-panel" aria-label="One connected record">
             <div className="record-panel__intro">
               <h3 className="record-panel__headline">{record.header}</h3>
-              <p className="record-panel__copy">{record.body}</p>
             </div>
             <ol className="record-panel__stages">
               {record.stages.map((stage, i) => (

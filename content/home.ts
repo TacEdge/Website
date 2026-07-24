@@ -131,7 +131,6 @@ export const workflow = {
 // within Confirm; Compound closes the loop back into configuration.
 export const record = {
   header: "One work item. One connected record.",
-  body: "Setup, capture, QA, release and learning stay connected from field to closeout.",
   stages: [
     { key: "configured", label: "Configured" },
     { key: "captured", label: "Captured" },
