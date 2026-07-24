@@ -313,9 +313,6 @@ export default function Home() {
             </ol>
           </div>
           <div className="problem__aside">
-            <span className="problem__aside-icon" aria-hidden="true">
-              <ProcessIcon type="record" />
-            </span>
             <h3 className="problem__callout">{problem.callout}</h3>
             <p className="problem__after">{problem.after}</p>
             <div className="cost">
@@ -351,8 +348,8 @@ export default function Home() {
               <li className="phase-track" key={phase.key}>
                 <article className={`phase phase--${phase.key}`}>
                   <div className="phase__head">
-                    <span className="phase__num" aria-hidden="true">
-                      {i + 1}
+                    <span className="phase__glyph" aria-hidden="true">
+                      <RecordStageIcon type={record.stages[i].key} size={30} />
                     </span>
                     <div>
                       <h3 className="phase__title">{phase.title}</h3>

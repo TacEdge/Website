@@ -677,17 +677,6 @@ button { font: inherit; }
   flex-direction: column;
   justify-content: flex-start;
 }
-.problem__aside-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--r-pill);
-  background: var(--sage-tint);
-  color: var(--forest-2);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 22px;
-}
 
 /* Icon-led problem statements, ruled apart by hairlines */
 .problem-points {
@@ -906,23 +895,15 @@ button { font: inherit; }
 @media (min-width: 721px) {
   .phase__head { min-height: 74px; }
 }
-.phase__num {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: var(--fs-lg);
-  width: 40px;
+/* Bare stage glyph beside each card title — no container */
+.phase__glyph {
+  flex-shrink: 0;
+  width: 34px;
   height: 40px;
-  border-radius: var(--r-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-}
-/* Identical marker treatment for all three stages: sequence, not selection */
-.phase__num {
-  background: var(--sage-tint);
-  color: var(--forest);
-  border: 1px solid var(--forest-2);
+  color: var(--forest-2);
 }
 .phase__title { font-size: var(--t-card-title); }
 .phase__descriptor {
