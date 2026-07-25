@@ -381,25 +381,6 @@ export default function Home() {
             ))}
           </ol>
 
-          {/* One connected record — the conclusion of the workflow */}
-          <aside className="record-panel" aria-label="One connected record">
-            <div className="record-panel__intro">
-              <h3 className="record-panel__headline">{record.header}</h3>
-            </div>
-            <ol className="record-panel__stages">
-              {record.stages.map((stage, i) => (
-                <li key={stage.key}>
-                  <span className={`record-stage record-stage--${stage.key}`}>
-                    <RecordStageIcon type={stage.key} />
-                    <b>{stage.label}</b>
-                  </span>
-                  {i < record.stages.length - 1 && (
-                    <Arrow className="record-panel__arrow" size={20} />
-                  )}
-                </li>
-              ))}
-            </ol>
-          </aside>
         </div>
       </section>
 
