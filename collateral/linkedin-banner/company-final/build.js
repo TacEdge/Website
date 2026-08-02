@@ -15,16 +15,16 @@ const contourSrc = fs.readFileSync(
 );
 const paths = [...contourSrc.matchAll(/"(M[^"]+)"/g)].map((m) => m[1]);
 
-// LinkedIn company cover 1128x191. Horizontal composition, right aligned:
-// [ Shared Clarity / for Ground Engineering Delivery ] | [ lockup ] →
+// LinkedIn company cover 1128x191. Horizontal, right aligned, logo as hero:
+// [ smaller message ] | [ large lockup ] →
 const W = 1128, H = 191;
-const RIGHT_INSET = 100;            // clear of right-edge cropping
-const LOCKUP_W = 240;
-const LOCKUP_H = LOCKUP_W * (391 / 1978); // ≈ 47.4
-const LOCKUP_X = W - RIGHT_INSET - LOCKUP_W; // 788
+const RIGHT_INSET = 100;
+const LOCKUP_W = 340;                      // the hero
+const LOCKUP_H = LOCKUP_W * (391 / 1978);  // ≈ 67.2
+const LOCKUP_X = W - RIGHT_INSET - LOCKUP_W; // 688
 const LOCKUP_Y = (H - LOCKUP_H) / 2;
-const RULE_X = LOCKUP_X - 33;       // 755
-const TEXT_END = RULE_X - 32;       // 723 — message right-aligned to the rule
+const RULE_X = LOCKUP_X - 33;              // 655
+const TEXT_END = RULE_X - 32;              // 623
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="TACEDGE — Shared Clarity for Ground Engineering Delivery">
   <defs>
@@ -42,14 +42,14 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" wid
     </g>
   </svg>
 
-  <!-- Message, right-aligned against the hairline -->
-  <text x="${TEXT_END}" y="94" text-anchor="end" font-family="Play" font-weight="700" font-size="42" letter-spacing="0.5" fill="#F7F5EC">Shared Clarity</text>
-  <text x="${TEXT_END}" y="128" text-anchor="end" font-family="Be Vietnam Pro" font-weight="400" font-size="16" letter-spacing="0.3" fill="#B2B594">for Ground Engineering Delivery</text>
+  <!-- Subordinate message, right-aligned against the hairline -->
+  <text x="${TEXT_END}" y="93" text-anchor="end" font-family="Play" font-weight="700" font-size="26" letter-spacing="0.4" fill="#F7F5EC">Shared Clarity</text>
+  <text x="${TEXT_END}" y="120" text-anchor="end" font-family="Be Vietnam Pro" font-weight="400" font-size="14" letter-spacing="0.3" fill="#B2B594">for Ground Engineering Delivery</text>
 
   <!-- Hairline divider -->
-  <line x1="${RULE_X}" y1="58" x2="${RULE_X}" y2="133" stroke="#B2B594" stroke-opacity="0.45" stroke-width="1"/>
+  <line x1="${RULE_X}" y1="64" x2="${RULE_X}" y2="127" stroke="#B2B594" stroke-opacity="0.45" stroke-width="1"/>
 
-  <!-- Lockup, right side, vertically centred -->
+  <!-- Hero lockup, right side, vertically centred -->
   <svg x="${LOCKUP_X}" y="${LOCKUP_Y.toFixed(1)}" width="${LOCKUP_W}" height="${LOCKUP_H.toFixed(1)}" viewBox="0 0 1978 391">
     ${lockupInner}
   </svg>
@@ -68,4 +68,4 @@ img{display:block;max-width:100%;border:1px solid #ccc}
 <div class="mobile"><h2>Mobile-style width — 420px</h2><img src="tacedge-linkedin-banner.svg" alt=""></div>
 </body></html>`;
 fs.writeFileSync(path.join(OUT, "tacedge-linkedin-banner-preview.html"), preview);
-console.log("built; lockup right edge at", LOCKUP_X + LOCKUP_W, "of", W);
+console.log("built");
