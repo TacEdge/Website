@@ -41,7 +41,7 @@ html,body{width:1584px;height:396px}
   ${contourSvg}
   <div class="block">
     ${lockup}
-    <div class="rule"></div>
+    
     <div class="tag">Shared Clarity.</div>
   </div>
 </div>
