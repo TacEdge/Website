@@ -101,7 +101,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       {/* iPad / desktop: slim left navigation rail */}
       <nav
         aria-label="Primary"
-        className="on-dark sticky top-0 z-40 hidden h-dvh w-56 shrink-0 flex-col bg-blackwood pt-safe md:flex"
+        className="on-dark fixed inset-y-0 left-0 z-40 hidden w-56 flex-col overflow-y-auto overscroll-contain bg-blackwood pt-safe md:flex"
       >
         <div className="flex items-center gap-2.5 px-5 pb-8 pt-6">
           <BrandLockup failed={logoFailed} onError={() => setLogoFailed(true)} />
@@ -137,7 +137,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </nav>
 
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className="flex min-w-0 flex-1 flex-col md:pl-56">
         {/* Phone: app-like top bar */}
         <header className="on-dark sticky top-0 z-40 bg-blackwood pt-safe md:hidden">
           <div className="flex min-h-14 items-center justify-between gap-3 px-4">
