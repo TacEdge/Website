@@ -27,10 +27,10 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['brand/favicon.svg', 'icons/apple-touch-icon.png'],
       manifest: {
-        name: forceDemo ? 'TacEdge Budget (demo)' : 'TacEdge Budget',
+        name: forceDemo ? 'TAC-EDGE Budget (demo)' : 'TAC-EDGE Budget',
         short_name: 'Budget',
         description:
-          'Private budgeting and cashflow tool across Personal, Property and TacEdge.',
+          'Private budgeting and cashflow tool across Personal, Property and TAC-EDGE.',
         display: 'standalone',
         start_url: forceDemo ? '.' : '/',
         scope: forceDemo ? './' : '/',

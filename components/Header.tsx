@@ -9,11 +9,11 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link href="/" className="site-header__logo" aria-label="TacEdge home">
+        <Link href="/" className="site-header__logo" aria-label="TAC-EDGE home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/brand/tacedge-lockup-cream.svg`}
-            alt="TACEDGE"
+            alt="TAC-EDGE"
             width={182}
             height={36}
           />

@@ -18,7 +18,7 @@ export function Onboarding({ onDone }: { onDone: () => void }) {
         <h1 className="text-[28px]">Build your financial picture</h1>
         <p className="mt-3 text-[15px] font-light leading-relaxed text-ink">
           Add your regular income and expenses across Personal, Property and
-          TacEdge. Your consolidated position will update automatically.
+          TAC-EDGE. Your consolidated position will update automatically.
         </p>
         <p className="mt-2 text-[13px] font-light text-moss">
           Your property loans are already set up and can be edited any time.
@@ -32,7 +32,7 @@ export function Onboarding({ onDone }: { onDone: () => void }) {
           Start with Property
         </Button>
         <Button variant="secondary" onClick={() => start('/b/tacedge')}>
-          Start with TacEdge
+          Start with TAC-EDGE
         </Button>
         <Button variant="quiet" onClick={() => start('/')}>
           Go to Overview

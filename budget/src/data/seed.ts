@@ -80,7 +80,7 @@ export function buildSeedData(): SeedData {
     displayOrder: 1, icon: 'home', active: true, cashBalanceCents: null,
   }
   const tacedge: Budget = {
-    id: newId(), name: 'TacEdge', slug: 'tacedge',
+    id: newId(), name: 'TAC-EDGE', slug: 'tacedge',
     displayOrder: 2, icon: 'mountain', active: true, cashBalanceCents: null,
   }
 

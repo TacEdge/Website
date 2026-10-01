@@ -248,7 +248,7 @@ export function BudgetScreen() {
         </div>
       </section>
 
-      {/* TacEdge: operating summary and runway */}
+      {/* TAC-EDGE: operating summary and runway */}
       {runway && (
         <section
           aria-label="Operating summary and runway"
@@ -670,7 +670,7 @@ function CashBalanceSheet({
     <Sheet open={open} onClose={onClose} title="Cash balance">
       <div className="flex flex-col gap-4 pb-4">
         <p className="text-[13px] font-light text-moss">
-          Enter the TacEdge cash balance manually. It is used to estimate runway
+          Enter the TAC-EDGE cash balance manually. It is used to estimate runway
           and is not read from your bank.
         </p>
         <Field label="Cash balance" htmlFor="cash-balance">

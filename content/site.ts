@@ -16,7 +16,7 @@ export const cta = {
 export const footer = {
   line: "The field platform for ground engineering delivery.",
   email: "mike@tacedge.co.nz",
-  company: "TacEdge",
-  copyright: `© ${new Date().getFullYear()} TacEdge. All rights reserved.`,
+  company: "TAC-EDGE",
+  copyright: `© ${new Date().getFullYear()} TAC-EDGE. All rights reserved.`,
   location: "New Zealand",
 };

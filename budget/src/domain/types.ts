@@ -25,7 +25,7 @@ export interface Budget {
   displayOrder: number
   icon: string | null
   active: boolean
-  /** Manually entered cash balance — used for the TacEdge runway view. */
+  /** Manually entered cash balance — used for the TAC-EDGE runway view. */
   cashBalanceCents: number | null
 }
 
