@@ -8,7 +8,7 @@ import type {
 } from '@/domain/types'
 import type { DataStore, ExportPayload, Snapshot } from './store'
 import { safeStorage } from './safeStorage'
-import { buildSeedData, DEFAULT_SETTINGS } from './seed'
+import { buildSeedData, DEFAULT_SETTINGS, legacyBudgetRenames } from './seed'
 
 const STORAGE_KEY = 'tacedge-budget-demo-v1'
 
@@ -55,7 +55,16 @@ export class LocalStore implements DataStore {
   }
 
   async seedIfNeeded(): Promise<boolean> {
-    if (this.state.budgets.length > 0) return false
+    if (this.state.budgets.length > 0) {
+      const renames = legacyBudgetRenames(this.state.budgets)
+      if (renames.length > 0) {
+        for (const { id, name } of renames) {
+          this.state.budgets = this.state.budgets.map((b) => (b.id === id ? { ...b, name } : b))
+        }
+        this.persist()
+      }
+      return false
+    }
     const seed = buildSeedData()
     this.state.budgets = seed.budgets
     this.state.categories = seed.categories

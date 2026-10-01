@@ -150,7 +150,7 @@ export function validateImport(raw: string): ImportValidation {
     return {
       ok: false,
       error:
-        'This file is not a TacEdge Budget backup, or it was made by an incompatible version.',
+        'This file is not a TAC-EDGE Finance backup, or it was made by an incompatible version.',
     }
   }
   const payload = result.data

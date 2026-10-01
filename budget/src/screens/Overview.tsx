@@ -61,7 +61,7 @@ export function Overview() {
       <header>
         <h1 className="text-[26px]">Overview</h1>
         <p className="text-[13px] font-light text-moss">
-          Consolidated position across Personal, Property and TacEdge.
+          Consolidated position across Personal, Property and TAC-EDGE.
         </p>
       </header>
 
@@ -131,7 +131,7 @@ export function Overview() {
       {!hasAnyItems && (
         <EmptyState
           title="Build your financial picture"
-          body="Add your regular income and expenses across Personal, Property and TacEdge. Your consolidated position will update automatically."
+          body="Add your regular income and expenses across Personal, Property and TAC-EDGE. Your consolidated position will update automatically."
         />
       )}
 

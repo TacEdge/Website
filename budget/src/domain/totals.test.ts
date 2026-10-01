@@ -34,7 +34,7 @@ function makeItem(partial: Partial<BudgetItem>): BudgetItem {
 
 const budgets: Budget[] = [
   { id: 'b1', name: 'Personal', slug: 'personal', displayOrder: 0, icon: null, active: true, cashBalanceCents: null },
-  { id: 'b2', name: 'TacEdge', slug: 'tacedge', displayOrder: 1, icon: null, active: true, cashBalanceCents: null },
+  { id: 'b2', name: 'TAC-EDGE', slug: 'tacedge', displayOrder: 1, icon: null, active: true, cashBalanceCents: null },
 ]
 
 const options = { period: 'monthly' as const, includeOneOffs: true, today }

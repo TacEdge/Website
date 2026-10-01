@@ -1,9 +1,9 @@
-# TacEdge | Budget
+# TAC-EDGE Finance
 
 A private, mobile-first budgeting PWA that brings together three connected
-financial areas — **Personal**, **Property** and **TacEdge** — with a
+financial areas — **Personal**, **Property** and **TAC-EDGE** — with a
 consolidated overview, correct transfer handling, loan records and a
-TacEdge cash/runway view.
+TAC-EDGE cash/runway view.
 
 Built with React, TypeScript (strict), Vite, Tailwind CSS, Supabase,
 React Router, TanStack Query, React Hook Form, Zod, vite-plugin-pwa,
@@ -95,7 +95,7 @@ New deployments show an in-app “A new version is available — Refresh” bar.
 2. Tap the **Share** button.
 3. Tap **Add to Home Screen**, then **Add**.
 4. Launch from the home-screen icon — the app opens full-screen without
-   browser chrome, with the TacEdge ridge-mark icon and blackwood theme.
+   browser chrome, with the TAC-EDGE ridge-mark icon and blackwood theme.
 
 ## 5. Export, backup and restore
 

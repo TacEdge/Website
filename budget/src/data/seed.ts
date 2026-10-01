@@ -63,6 +63,21 @@ const TACEDGE_EXPENSES: CategorySeed[] = [
   'GST provision', 'Tax provision', 'Other',
 ].map((name) => ({ name, itemType: 'expense' as const }))
 
+/**
+ * Budget names that earlier versions seeded and that have since been renamed.
+ * Only an untouched default is migrated; a name the user chose is left alone.
+ */
+export const LEGACY_BUDGET_NAMES: Record<string, { from: string; to: string }> = {
+  tacedge: { from: 'TacEdge', to: 'TAC-EDGE' },
+}
+
+export function legacyBudgetRenames(budgets: Budget[]): { id: string; name: string }[] {
+  return budgets.flatMap((b) => {
+    const legacy = LEGACY_BUDGET_NAMES[b.slug]
+    return legacy && b.name === legacy.from ? [{ id: b.id, name: legacy.to }] : []
+  })
+}
+
 export interface SeedData {
   budgets: Budget[]
   categories: Category[]
@@ -80,7 +95,7 @@ export function buildSeedData(): SeedData {
     displayOrder: 1, icon: 'home', active: true, cashBalanceCents: null,
   }
   const tacedge: Budget = {
-    id: newId(), name: 'TacEdge', slug: 'tacedge',
+    id: newId(), name: 'TAC-EDGE', slug: 'tacedge',
     displayOrder: 2, icon: 'mountain', active: true, cashBalanceCents: null,
   }
 

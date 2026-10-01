@@ -20,7 +20,7 @@ const NAV = [
   { to: '/', label: 'Overview', icon: LayoutGrid, end: true },
   { to: '/b/personal', label: 'Personal', icon: Wallet, end: false },
   { to: '/b/property', label: 'Property', icon: Home, end: false },
-  { to: '/b/tacedge', label: 'TacEdge', icon: Briefcase, end: false },
+  { to: '/b/tacedge', label: 'TAC-EDGE', icon: Briefcase, end: false },
 ]
 
 /** Plain-language sync state for the top bar. */
@@ -202,24 +202,24 @@ export function AppShell({ children }: { children: ReactNode }) {
 
 /**
  * Masterbrand lockup with the quiet product descriptor:
- * TacEdge (approved asset) | Budget. Falls back to text-only if the
+ * TAC-EDGE (approved asset) | Finance. Falls back to text-only if the
  * asset fails to load — never a redrawn mark.
  */
 function BrandLockup({ failed, onError }: { failed: boolean; onError: () => void }) {
   return (
     <span className="flex items-center gap-2.5">
       {failed ? (
-        <span className="font-display text-[17px] text-cream">TacEdge</span>
+        <span className="font-display text-[17px] text-cream">TAC-EDGE</span>
       ) : (
         <img
           src={lockupCream}
-          alt="TacEdge"
+          alt="TAC-EDGE"
           className="h-[22px] w-auto"
           onError={onError}
         />
       )}
       <span aria-hidden className="h-4 w-px bg-sage/40" />
-      <span className="text-[13px] font-light tracking-wide text-sage">Budget</span>
+      <span className="text-[13px] font-light tracking-wide text-sage">Finance</span>
     </span>
   )
 }
