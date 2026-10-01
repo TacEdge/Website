@@ -8,7 +8,7 @@ import type {
   Transfer,
 } from '@/domain/types'
 import type { DataStore, ExportPayload } from './store'
-import { buildSeedData, DEFAULT_SETTINGS } from './seed'
+import { buildSeedData, DEFAULT_SETTINGS, legacyBudgetRenames } from './seed'
 
 export function supabaseConfig(): { url: string; anonKey: string } | null {
   const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
@@ -235,6 +235,9 @@ export class SupabaseStore implements DataStore {
   async seedIfNeeded(): Promise<boolean> {
     const existing = await this.selectAll('budgets')
     if (existing.length > 0) {
+      for (const { id, name } of legacyBudgetRenames(existing.map(budgetFromRow))) {
+        await this.update('budgets', id, { name })
+      }
       await this.ensureSettings()
       return false
     }
