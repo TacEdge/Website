@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { footer } from "@/content/site";
 
-export const metadata: Metadata = { title: "Contact · TAC-EDGE" };
+export const metadata: Metadata = { title: "Contact · TacEdge" };
 
 export default function Contact() {
   return (

@@ -1,6 +1,6 @@
-# TAC-EDGE website
+# TacEdge website
 
-Five-page marketing site for TAC-EDGE. Next.js, no backend.
+Five-page marketing site for TacEdge. Next.js, no backend.
 
 ## Run
 
@@ -34,5 +34,5 @@ hand-edit these images.
 
 ## Budget app
 
-`budget/` contains **TAC-EDGE | Budget**, the private budgeting PWA (React + Vite + Supabase).
+`budget/` contains **TAC-EDGE Finance**, the private budgeting PWA (React + Vite + Supabase).
 It is a separate workspace with its own dependencies and deployment — see `budget/README.md`.

@@ -80,7 +80,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("hero-map.webp")}
-                alt="TAC-EDGE project management view: spillway anchors plotted over a site photograph, with status filters and a selected anchor's drill and QA state"
+                alt="TacEdge project management view: spillway anchors plotted over a site photograph, with status filters and a selected anchor's drill and QA state"
                 width={1800}
                 height={1125}
               />
@@ -89,7 +89,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("phone-drill-log.webp")}
-                alt="TAC-EDGE operator phone: drill log capture for anchor B12 with large depth entry controls"
+                alt="TacEdge operator phone: drill log capture for anchor B12 with large depth entry controls"
                 width={640}
                 height={1918}
               />
@@ -98,7 +98,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={product("record-released.webp")}
-                alt="TAC-EDGE confirmed work item record: anchor B01 released to the engineer with depth, test result and five of five evidence requirements met"
+                alt="TacEdge confirmed work item record: anchor B01 released to the engineer with depth, test result and five of five evidence requirements met"
                 width={900}
                 height={767}
               />

@@ -202,7 +202,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
 /**
  * Masterbrand lockup with the quiet product descriptor:
- * TAC-EDGE (approved asset) | Budget. Falls back to text-only if the
+ * TAC-EDGE (approved asset) | Finance. Falls back to text-only if the
  * asset fails to load — never a redrawn mark.
  */
 function BrandLockup({ failed, onError }: { failed: boolean; onError: () => void }) {
@@ -219,7 +219,7 @@ function BrandLockup({ failed, onError }: { failed: boolean; onError: () => void
         />
       )}
       <span aria-hidden className="h-4 w-px bg-sage/40" />
-      <span className="text-[13px] font-light tracking-wide text-sage">Budget</span>
+      <span className="text-[13px] font-light tracking-wide text-sage">Finance</span>
     </span>
   )
 }

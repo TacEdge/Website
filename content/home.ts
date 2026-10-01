@@ -52,7 +52,7 @@ export const workflow = {
       outcome: "Everyone begins with the same definition of what must be delivered.",
       image: {
         src: "photo-configure-pm.webp",
-        alt: "Project manager at a desktop in the office, setting up a work plan of anchors and zones over a site photograph in TAC-EDGE",
+        alt: "Project manager at a desktop in the office, setting up a work plan of anchors and zones over a site photograph in TacEdge",
       },
     },
     {
@@ -70,7 +70,7 @@ export const workflow = {
       outcome: "The operator records. The project manager sees.",
       image: {
         src: "photo-capture-abseil.webp",
-        alt: "Operator on ropes at a coastal rock face recording a drill log on a phone in TAC-EDGE, drill rig visible behind",
+        alt: "Operator on ropes at a coastal rock face recording a drill log on a phone in TacEdge, drill rig visible behind",
       },
     },
     {
@@ -88,7 +88,7 @@ export const workflow = {
       outcome: "The client sees a confirmed record, not unchecked raw submissions.",
       image: {
         src: "photo-confirm-engineer.webp",
-        alt: "Engineer at a desk reviewing a passed TAC-EDGE anchor test report on a desktop monitor",
+        alt: "Engineer at a desk reviewing a passed TacEdge anchor test report on a desktop monitor",
       },
     },
   ],
@@ -125,7 +125,7 @@ export const principles = {
       key: "configured",
       title: "Configured for the work",
       header: "One workflow. Multiple work types.",
-      copy: "TAC-EDGE adapts to anchoring, drilling, shotcrete, rockfall protection, drainage, and piling / retaining.",
+      copy: "TacEdge adapts to anchoring, drilling, shotcrete, rockfall protection, drainage, and piling / retaining.",
     },
   ],
 };
@@ -149,20 +149,20 @@ export const origin = {
   eyebrow: "Our story",
   header: "Born from a real coordination gap.",
   body: [
-    "TAC-EDGE began during the Whakaari / White Island recovery operation in 2019, when a complex multi-agency plan had to be drawn on a whiteboard and transferred to a single PowerPoint slide.",
+    "TacEdge began during the Whakaari / White Island recovery operation in 2019, when a complex multi-agency plan had to be drawn on a whiteboard and transferred to a single PowerPoint slide.",
     "Experienced people delivered the operation, but there was no shared digital workspace where everyone could maintain the same current picture.",
-    "TAC-EDGE exists to make shared clarity the normal way of working.",
+    "TacEdge exists to make shared clarity the normal way of working.",
   ],
   button: "Read our story",
   image: {
     src: "photo-whakaari.webp",
-    alt: "Whakaari / White Island steaming across the water, with the TAC-EDGE brandmark peaks in front",
+    alt: "Whakaari / White Island steaming across the water, with the TacEdge brandmark peaks in front",
   },
 };
 
 export const closing = {
   header: "See it on a live project.",
-  body: "Bring a current project, work type or reporting problem. In fifteen minutes, we'll show how TAC-EDGE would structure it.",
+  body: "Bring a current project, work type or reporting problem. In fifteen minutes, we'll show how TacEdge would structure it.",
   support: "Bring your engineer if useful.",
   button: "Arrange a demonstration",
 };

@@ -11,7 +11,7 @@ export default function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`${basePath}/brand/tacedge-lockup-cream.svg`}
-              alt="TAC-EDGE"
+              alt="TACEDGE"
               width={162}
               height={32}
             />

@@ -1,4 +1,4 @@
-# TAC-EDGE | Budget
+# TAC-EDGE Finance
 
 A private, mobile-first budgeting PWA that brings together three connected
 financial areas — **Personal**, **Property** and **TAC-EDGE** — with a
